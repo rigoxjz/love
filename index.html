@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Brenda, perdón | Una oportunidad para recuperar tu confianza</title>
+    <!-- JAX (jQuery + AJAX) incluido, aunque sin elementos interactivos se conserva por si se desea, pero sin botones ni formularios -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Fuentes elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fdd9e2 0%, #fbe9f0 100%);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Fondo con corazoncitos sutiles */
+        body::before {
+            content: "❤️ 💖 💗 💓 💕";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            font-size: 45px;
+            color: rgba(255, 140, 170, 0.08);
+            text-align: center;
+            pointer-events: none;
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 30px;
+        }
+
+        .card {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 48px;
+            box-shadow: 0 25px 45px rgba(210, 70, 100, 0.25), 0 8px 18px rgba(0,0,0,0.05);
+            overflow: hidden;
+            backdrop-filter: blur(2px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 210, 220, 0.7);
+            animation: fadeSlideUp 0.6s ease-out;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: #ffb7c5;
+            background-image: radial-gradient(circle at 10% 30%, rgba(255,240,245,0.5) 2%, transparent 2.5%);
+            background-size: 28px 28px;
+            padding: 35px 25px 20px 25px;
+            text-align: center;
+            border-bottom: 3px solid #ff8aa8;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #a1224a;
+            text-shadow: 2px 2px 12px rgba(255, 215, 225, 0.8);
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #6b2e44;
+            background: rgba(255, 242, 245, 0.8);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            margin-top: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+        }
+
+        /* Sección de la foto de Brenda */
+        .foto-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+        .foto-wrapper {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb7c5, #ff8aa8);
+            padding: 5px;
+            box-shadow: 0 12px 25px rgba(160, 60, 80, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .foto-wrapper:hover {
+            transform: scale(1.02);
+        }
+        .foto-brenda {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            background-color: #ffe4ec;
+            display: block;
+        }
+        /* Placeholder elegante en caso de que la imagen no cargue */
+        .fallback-corazon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffdae3;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            font-size: 4rem;
+            color: #e65c7c;
+        }
+
+        .content {
+            padding: 20px 28px 32px;
+        }
+
+        .mensaje-disculpa {
+            background: #fff7f9;
+            padding: 28px 24px;
+            border-radius: 38px;
+            margin-bottom: 20px;
+            border-left: 8px solid #ff7b9c;
+            box-shadow: 0 6px 14px rgba(241, 147, 167, 0.15);
+        }
+
+        .mensaje-disculpa p {
+            font-size: 1.1rem;
+            line-height: 1.55;
+            color: #3a2a30;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .mensaje-disculpa .corazon-frase {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e65c7c;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Panel decorativo de mensaje fijo (sin botones ni interacción) */
+        .mensaje-paz {
+            margin-top: 20px;
+            background: #fef0f3;
+            border-radius: 28px;
+            padding: 18px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #b34e6e;
+            border: 1px solid #ffe2ea;
+            transition: all 0.2s;
+        }
+
+        .footer {
+            background: #fff1f5;
+            padding: 18px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b97089;
+            border-top: 1px solid #ffe0e8;
+        }
+
+        .corazon-flotante {
+            animation: latido 1.2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); text-shadow: 0 0 3px #ff5a7a; }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 550px) {
+            .card {
+                border-radius: 36px;
+            }
+            .header h1 {
+                font-size: 2.4rem;
+            }
+            .mensaje-disculpa .corazon-frase {
+                font-size: 1.6rem;
+            }
+            .content {
+                padding: 20px 20px 28px;
+            }
+            .foto-wrapper {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <h1>🌸 Brenda, perdón 🌸</h1>
+        <p><i class="fas fa-heartbeat"></i> Desde lo más profundo de mi corazón, para ti</p>
+    </div>
+
+    <!-- Foto de Brenda: la imagen debe llamarse "brenda.jpg" en la misma carpeta, o cambiar la ruta.
+         Si no existe la imagen, se mostrará un hermoso corazón de relleno (fallback) -->
+    <div class="foto-section">
+        <div class="foto-wrapper">
+            <img id="fotoBrenda" class="foto-brenda" src="brenda.jpg" alt="Foto de Brenda" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'fallback-corazon\'><i class=\'fas fa-heart\'></i></div>';">
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Único mensaje de disculpa y amor sincero, personalizado para Brenda. Sin botones, sin formularios, sin comentarios -->
+        <div class="mensaje-disculpa">
+            <p>✨ <strong>Para Brenda, la luz de mi vida...</strong> ✨</p>
+            <p>Hoy me arrodillo ante tu corazón, Brenda. Cometí errores que dañaron tu confianza, y lo siento con cada fibra de mi ser. 
+            No hay excusa que valga, pero sí un amor inmenso que late solo por ti. Eres la mujer más importante en mi mundo, 
+            tu sonrisa es mi sol y tus ojos mi hogar. Te pido humildemente que me des la oportunidad de demostrarte que puedo cambiar, 
+            que puedo reconstruir cada ladrillo de confianza que se rompió. <strong>Te amo, Brenda</strong>, con una fuerza que ni el tiempo ni los errores pueden apagar.</p>
+            <div class="corazon-frase">
+                <i class="fas fa-heart" style="color:#ff5a7a;"></i> Brenda, te amo más de lo que las palabras pueden expresar <i class="fas fa-heart" style="color:#ff5a7a;"></i>
+            </div>
+        </div>
+
+        <!-- Panel decorativo con un mensaje de esperanza (sin interacción, solo lectura) -->
+        <div class="mensaje-paz">
+            <i class="fas fa-star-of-life"></i> Brenda, cada latido de mi corazón te pertenece. 
+            Quiero recuperar tu confianza paso a paso, con hechos, con respeto y con el amor más puro que siento por ti. 
+            <span style="display: block; margin-top: 8px;"><i class="fas fa-hand-sparkles"></i> Confía en mí, hermosa, juntos podemos sanar.</span>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <i class="fas fa-infinity"></i> Mi amor por ti, Brenda, no tiene final — dame la oportunidad de construir una nueva historia junto a ti. 
+        <span style="display: block; margin-top: 4px;">❤️ Perdón, Brenda ❤️ Confianza ❤️ Amor verdadero ❤️</span>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // JAX está incluido (jQuery y AJAX) aunque no hay elementos interactivos.
+        // Simplemente añadimos un pequeño efecto visual de corazones sutiles al cargar la página,
+        // para dar un ambiente de ternura sin necesidad de botones ni comentarios.
+        
+        // Efecto de latido periódico en el título de Brenda
+        setInterval(() => {
+            $('.header h1').addClass('corazon-flotante');
+            setTimeout(() => $('.header h1').removeClass('corazon-flotante'), 400);
+        }, 2800);
+        
+        // Pequeño detalle: al pasar el mouse sobre la foto, un efecto de cariño (solo visual)
+        $('.foto-wrapper').on('mouseenter', function() {
+            $(this).css('transform', 'scale(1.03)');
+        }).on('mouseleave', function() {
+            $(this).css('transform', 'scale(1)');
+        });
+        
+        // Si la imagen no existe, el fallback ya está activo, pero agregamos un pequeño tooltip simbólico
+        const img = document.getElementById('fotoBrenda');
+        if (img) {
+            img.addEventListener('error', function() {
+                const wrapper = document.querySelector('.foto-wrapper');
+                if (wrapper && wrapper.querySelector('.fallback-corazon')) {
+                    const fallbackDiv = wrapper.querySelector('.fallback-corazon');
+                    if (fallbackDiv && !fallbackDiv.hasAttribute('data-tooltip')) {
+                        fallbackDiv.setAttribute('data-tooltip', '💖 Mi Brenda hermosa 💖');
+                        fallbackDiv.style.cursor = 'default';
+                    }
+                }
+            });
+        }
+        
+        // Opcional: lanzar unos pocos corazones flotantes al inicio para dar calidez (sin necesidad de clics)
+        function crearCorazonesBienvenida() {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    let corazon = $('<i class="fas fa-heart" style="position:fixed; font-size:20px; pointer-events:none; z-index:10000; color:#ff8aa8; opacity:0.7; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));"></i>');
+                    let leftInit = Math.random() * 80 + 10;
+                    corazon.css({
+                        bottom: '-30px',
+                        left: leftInit + '%',
+                    });
+                    $('body').append(corazon);
+                    corazon.animate({
+                        bottom: '100%',
+                        opacity: 0,
+                        left: (leftInit + (Math.random() * 14 - 7)) + '%'
+                    }, 2000, 'linear', function() { $(this).remove(); });
+                }, i * 200);
+            }
+        }
+        
+        // Pequeño detalle de corazones al cargar la página (solo decoración)
+        setTimeout(() => {
+            crearCorazonesBienvenida();
+        }, 500);
+        
+        // También un pequeño brillo en el mensaje principal al inicio
+        $('.mensaje-disculpa').css('transition', 'box-shadow 0.5s');
+        setTimeout(() => {
+            $('.mensaje-disculpa').css('box-shadow', '0 0 0 3px rgba(255, 107, 129, 0.2)');
+            setTimeout(() => {
+                $('.mensaje-disculpa').css('box-shadow', '0 6px 14px rgba(241, 147, 167, 0.15)');
+            }, 800);
+        }, 300);
+    });
+</script>
+</body>
+</html>
