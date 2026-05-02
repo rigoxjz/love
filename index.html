@@ -1,103 +1,636 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Brenda ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #333;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Para Brenda | Mi razón para creer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      padding: 40px 20px;
-      color: white;
-    }
+        body {
+            background: linear-gradient(145deg, #1a0b1f 0%, #2e1a2f 100%);
+            font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            color: #f9eef7;
+        }
 
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
+        /* Contenedor principal */
+        .carta-corazon {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(25, 12, 28, 0.55);
+            backdrop-filter: blur(2px);
+            border-radius: 3rem;
+            padding: 1.8rem;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.4), 0 0 0 1px rgba(255, 200, 220, 0.15);
+            transition: all 0.3s ease;
+        }
 
-    header p {
-      font-size: 1.3em;
-    }
+        /* SECCIÓN HEADER */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
 
-    .mensaje {
-      max-width: 700px;
-      margin: 20px auto;
-      background: rgba(255,255,255,0.8);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #FFD6E8, #FFB3C6, #FF8FAB);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            animation: suaveBrillo 3s infinite alternate;
+            display: inline-block;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
 
-    .collage {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
+        @keyframes suaveBrillo {
+            0% { filter: drop-shadow(0 0 2px #ffb7c5);}
+            100% { filter: drop-shadow(0 0 12px #ff7a9e);}
+        }
 
-    .collage img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
+        .subtitulo {
+            font-size: 1.3rem;
+            margin-top: 0.75rem;
+            font-weight: 400;
+            background: rgba(255, 235, 240, 0.15);
+            display: inline-block;
+            padding: 0.4rem 1.5rem;
+            border-radius: 60px;
+            backdrop-filter: blur(5px);
+            letter-spacing: 1px;
+        }
 
-    .collage img:hover {
-      transform: scale(1.1);
-    }
+        /* COLLAGE DE FOTOS - ELEMENTO PRINCIPAL */
+        .collage-amor {
+            margin: 3rem 0;
+            position: relative;
+        }
 
-    footer {
-      padding: 20px;
-      color: white;
-      font-size: 1.1em;
-    }
+        .grid-collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            grid-auto-rows: 220px;
+        }
 
-  </style>
+        /* estilos para cada foto - efecto artistico */
+        .collage-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
+            background: #2c1e2a;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.02) translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(255, 170, 200, 0.5);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.4s;
+            filter: brightness(0.96) contrast(1.05);
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.02) contrast(1.08);
+        }
+
+        /* overlay con texto sutil */
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 1rem 0.8rem 0.5rem;
+            color: #fff4e8;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            backdrop-filter: blur(2px);
+            font-style: italic;
+        }
+
+        .collage-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+
+        /* diferentes tamaños */
+        .item-tall {
+            grid-row: span 2;
+        }
+
+        .item-wide {
+            grid-column: span 2;
+        }
+
+        /* mensaje principal - carta de amor */
+        .mensaje-especial {
+            background: rgba(44, 24, 46, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin: 2.5rem 0;
+            border-left: 7px solid #ff8aa7;
+            border-right: 2px solid rgba(255, 190, 210, 0.4);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .mensaje-especial p {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+
+        .mensaje-especial .frase-fuerte {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, #FFC0CB, #FFB347);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .btn-corazon {
+            background: rgba(255, 110, 140, 0.2);
+            border: 1.5px solid #ff98b2;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffeef2;
+            margin-top: 0.8rem;
+            backdrop-filter: blur(4px);
+            transition: 0.2s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-corazon:hover {
+            background: #ff8aab;
+            color: #2b0e23;
+            border-color: #ffbfd0;
+            transform: scale(0.98);
+        }
+
+        /* frase de dedicación total */
+        .promesa {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+        }
+
+        .card-promesa {
+            background: rgba(0,0,0,0.25);
+            padding: 1rem 1.5rem;
+            border-radius: 3rem;
+            width: auto;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 185, 200, 0.4);
+            backdrop-filter: blur(6px);
+            transition: all 0.2s;
+        }
+
+        .card-promesa i {
+            font-style: normal;
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        /* Sección de "por qué Brenda me hizo creer" */
+        .creer-section {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 1rem;
+        }
+
+        .creer-card {
+            flex: 1;
+            min-width: 180px;
+            background: rgba(47, 30, 51, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 1.8rem;
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 400;
+            border-bottom: 3px solid #ff96af;
+        }
+
+        /* animaciones flotantes */
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-6px); }
+        }
+
+        .floating {
+            animation: flotar 3s infinite alternate ease-in-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .carta-corazon {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .grid-collage {
+                grid-auto-rows: 180px;
+                gap: 0.9rem;
+            }
+            .item-wide {
+                grid-column: span 1;
+            }
+            .item-tall {
+                grid-row: span 1;
+            }
+            .mensaje-especial p {
+                font-size: 1rem;
+            }
+            .subtitulo {
+                font-size: 1rem;
+            }
+        }
+
+        /* Boton flotante de latido */
+        .latido-boton {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #ff77a0;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px #ff6f8f;
+            cursor: pointer;
+            font-size: 28px;
+            transition: 0.2s;
+            z-index: 99;
+            border: none;
+            color: white;
+        }
+
+        .latido-boton:hover {
+            transform: scale(1.1);
+            background: #ff5e8a;
+        }
+
+        /* modal de fotos ampliadas (opcional) */
+        .modal-foto {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(12px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .modal-img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 2rem;
+            box-shadow: 0 0 30px #ffb0c3;
+            border: 4px solid #ffc0d0;
+        }
+
+        /* texto elegante */
+        .corazon-texto {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        hr {
+            width: 80px;
+            margin: 1rem auto;
+            border: 1px solid #ffb2c7;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Brenda ❤️</h1>
-    <p>Eres el amor de mi vida</p>
-  </header>
+<div class="carta-corazon">
+    <div class="hero">
+        <h1>✨ Para Brenda ✨</h1>
+        <div class="subtitulo">
+            🌸 la luz que me hizo volver a creer 🌸
+        </div>
+    </div>
 
-  <section class="mensaje">
-    <p>
-      Desde que llegaste a mi vida, todo cambió. Cada momento contigo es especial,
-      cada sonrisa tuya ilumina mi día, y cada recuerdo contigo es algo que guardo
-      en lo más profundo de mi corazón.
-    </p>
-    <p>
-      No hay palabras suficientes para decir cuánto te amo, pero quiero que esto
-      sea una pequeña muestra de todo lo que siento por ti.
-    </p>
-    <p>
-      ❤️ Siempre tú ❤️
-    </p>
-  </section>
+    <!-- COLLAGE DE FOTOS - reemplazar las imágenes por las reales de Brenda -->
+    <div class="collage-amor">
+        <div class="grid-collage" id="collageGrid">
+            <!-- FOTO 1 -->
+            <div class="collage-item item-tall" data-img="https://picsum.photos/id/20/400/500?grayscale&seed=brenda1">
+                <img src="https://picsum.photos/id/20/400/500?grayscale&seed=brenda1" alt="Sonrisa Brenda">
+                <div class="photo-caption">💖 Tu sonrisa lo cambia todo 💖</div>
+            </div>
+            <!-- FOTO 2 -->
+            <div class="collage-item" data-img="https://picsum.photos/id/64/500/400?seed=brenda2">
+                <img src="https://picsum.photos/id/64/500/400?seed=brenda2" alt="Brenda especial">
+                <div class="photo-caption">🌙 Eres mi sueño hecho realidad 🌙</div>
+            </div>
+            <!-- FOTO 3 -->
+            <div class="collage-item item-wide" data-img="https://picsum.photos/id/169/800/400?seed=brenda3">
+                <img src="https://picsum.photos/id/169/800/400?seed=brenda3" alt="Brenda feliz">
+                <div class="photo-caption">☀️ La persona más auténtica que conozco ☀️</div>
+            </div>
+            <!-- FOTO 4 -->
+            <div class="collage-item" data-img="https://picsum.photos/id/26/400/400?seed=brenda4">
+                <img src="https://picsum.photos/id/26/400/400?seed=brenda4" alt="Mirada Brenda">
+                <div class="photo-caption">👁️ Tus ojos tienen mi universo 👁️</div>
+            </div>
+            <!-- FOTO 5 -->
+            <div class="collage-item item-tall" data-img="https://picsum.photos/id/30/400/500?seed=brenda5">
+                <img src="https://picsum.photos/id/30/400/500?seed=brenda5" alt="Magia Brenda">
+                <div class="photo-caption">✨ Magia en cada gesto ✨</div>
+            </div>
+            <!-- FOTO 6 -->
+            <div class="collage-item" data-img="https://picsum.photos/id/42/450/450?seed=brenda6">
+                <img src="https://picsum.photos/id/42/450/450?seed=brenda6" alt="Brenda arte">
+                <div class="photo-caption">🎨 Eres mi obra favorita 🎨</div>
+            </div>
+            <!-- FOTO 7 extra -->
+            <div class="collage-item" data-img="https://picsum.photos/id/100/450/450?seed=brenda7">
+                <img src="https://picsum.photos/id/100/450/450?seed=brenda7" alt="Brenda corazón">
+                <div class="photo-caption">💗 Mi latido más sincero 💗</div>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* Toca cualquier foto para verla más grande *</p>
+    </div>
 
-  <section class="collage">
-    <!-- Cambia estas imágenes por fotos de Brenda -->
-    <img src="foto1.jpg" alt="Brenda 1">
-    <img src="foto2.jpg" alt="Brenda 2">
-    <img src="foto3.jpg" alt="Brenda 3">
-    <img src="foto4.jpg" alt="Brenda 4">
-    <img src="foto5.jpg" alt="Brenda 5">
-    <img src="foto6.jpg" alt="Brenda 6">
-  </section>
+    <!-- MENSAJE CENTRAL: Aceptación, sanar juntos, amor incondicional -->
+    <div class="mensaje-especial">
+        <p>🌷 <strong>Brenda</strong>, tal vez las heridas del pasado aún duelen, y no sabes si estás lista para sentir de nuevo. Pero quiero que sepas algo...</p>
+        <p>🌹 <span class="frase-fuerte">"No importa si necesitas tiempo, sanar a tu ritmo o incluso usarme como apoyo; yo elijo quedarme."</span> 🌹</p>
+        <p>🕊️ No quiero apresurar tu corazón, solo caminar a tu lado. Si amas a otra persona que te lastimó y sientes confusión, está bien. Entiendo que el miedo habla más fuerte que el deseo. Pero te prometo que mis brazos nunca te harán daño.</p>
+        <p>💫 Porque gracias a ti volví a creer en el amor. Me enseñaste que vale la pena entregarlo todo si es por alguien como tú. Y si necesitas sanar... <strong>sanaremos juntos, paso a paso, sin presiones, solo con honestidad y compañía.</strong></p>
+        <div class="btn-corazon" id="promesaBtn">🌸 Escucha mi latido por ti 🌸</div>
+    </div>
 
-  <footer>
-    Hecho con todo mi amor para ti 💕
-  </footer>
+    <!-- Sección promesa de entrega total -->
+    <div class="promesa">
+        <div class="card-promesa floating"><i>❤️</i> Disfruto tu felicidad antes que la mía</div>
+        <div class="card-promesa floating" style="animation-delay: 0.2s;"><i>🌟</i> Quiero ayudarte a cicatrizar</div>
+        <div class="card-promesa floating" style="animation-delay: 0.4s;"><i>🌻</i> Mi vida es tuya si me lo permites</div>
+    </div>
 
+    <!-- Pequeña razón por la que ella me hizo creer en el amor -->
+    <div class="creer-section">
+        <div class="creer-card">
+            ✨ <strong>Autenticidad</strong> ✨<br>
+ "Me mostraste que amar no es perfecto, es real"
+        </div>
+        <div class="creer-card">
+            💖 <strong>Valentía</strong> 💖<br>
+ "A pesar del dolor, sigues siendo tierna"
+        </div>
+        <div class="creer-card">
+            🌙 <strong>Fuerza</strong> 🌙<br>
+ "Tu vulnerabilidad me hizo querer protegerte siempre"
+        </div>
+    </div>
+
+    <hr>
+    <p style="text-align: center; font-size: 0.9rem; padding: 0.8rem;">"Por Brenda, porque merece un amor que no lastime, que espere, que respete su proceso. Yo estaré aquí, sin condiciones. Solo tú." <br> — Alguien que te ama profundamente —</p>
+</div>
+
+<!-- Botón flotante con efecto corazón -->
+<div class="latido-boton" id="corazonFlotante">
+    💓
+</div>
+
+<!-- modal para ampliar fotos -->
+<div id="modalFotos" class="modal-foto">
+    <img class="modal-img" id="modalImagen" alt="ampliación">
+</div>
+
+<script>
+    // ---------- Función para reemplazar las imágenes de ejemplo con fotos reales de BRENDA ----------
+    // INSTRUCCIÓN: Si tienes fotos reales de Brenda, cambia las URLs de "https://picsum.photos/..." 
+    // por las rutas de tus imágenes (pueden ser locales o subidas a internet). 
+    // He puesto un collage placeholder, pero puedes añadir las verdaderas en el array "fotosReales".
+    // También puede mantener las actuales y solo cambiar los src de cada imagen, es fácil.
+    // Voy a dejar un bloque de ejemplo para que reemplaces con las imágenes de Brenda.
+    // Por ahora, el código funciona con imágenes placeholder, pero he comentado una forma de sustituirlas todas.
+    
+    // Si quieres asignar tus propias fotos de Brenda, descomenta el siguiente bloque y cambia las rutas.
+    // Ejemplo de reemplazo automático:
+    /*
+    const fotosVerdaderasBrenda = [
+        "ruta/foto1_brenda.jpg",
+        "ruta/foto2_brenda.jpg",
+        "ruta/foto3_brenda.jpg",
+        "ruta/foto4_brenda.jpg",
+        "ruta/foto5_brenda.jpg",
+        "ruta/foto6_brenda.jpg",
+        "ruta/foto7_brenda.jpg"
+    ];
+    const todasImgs = document.querySelectorAll('.collage-item img');
+    if(todasImgs.length === fotosVerdaderasBrenda.length && fotosVerdaderasBrenda[0] !== "ruta/foto1_brenda.jpg"){
+        todasImgs.forEach((img, idx) => {
+            img.src = fotosVerdaderasBrenda[idx];
+            img.alt = "Brenda " + (idx+1);
+        });
+    }
+    */
+    
+    // Por ahora se muestran imágenes placeholder estéticas con temática amorosa/cercana. 
+    // Pero tú puedes cambiar las imágenes fácilmente editando los atributos src de cada img dentro del grid.
+    // Alternativa: edita manualmente las fotos: reemplaza los links de picsum por tus fotos.
+    // Añadí la opción para que las imágenes tengan descripciones personalizadas.
+    // EL DISEÑO está completamente adaptado para que cuando pongas sus fotos reales, el collage se vea soñado.
+    
+    // ------- Modal para ampliar fotos ----------
+    const modal = document.getElementById('modalFotos');
+    const modalImg = document.getElementById('modalImagen');
+    const allPhotoItems = document.querySelectorAll('.collage-item');
+    
+    allPhotoItems.forEach(item => {
+        const imgElement = item.querySelector('img');
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if(imgElement && imgElement.src) {
+                modalImg.src = imgElement.src;
+                modal.style.display = 'flex';
+            }
+        });
+    });
+    
+    modal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+    
+    // Botón del corazón flotante: animación y mensaje
+    const btnCorazonFlotante = document.getElementById('corazonFlotante');
+    btnCorazonFlotante.addEventListener('click', () => {
+        // Efecto de explosión de corazones
+        crearLluviaCorazones();
+        // mostrar un pequeño alert personalizado más suave con notificación flotante
+        const noti = document.createElement('div');
+        noti.innerText = '💗 Tú eres mi razón, Brenda. Puedes usar este amor para sanar 💗';
+        noti.style.position = 'fixed';
+        noti.style.bottom = '100px';
+        noti.style.right = '30px';
+        noti.style.background = '#ff77aaee';
+        noti.style.backdropFilter = 'blur(8px)';
+        noti.style.padding = '12px 20px';
+        noti.style.borderRadius = '50px';
+        noti.style.fontWeight = 'bold';
+        noti.style.color = 'white';
+        noti.style.zIndex = '999';
+        noti.style.fontSize = '0.9rem';
+        noti.style.border = '1px solid #ffb7cb';
+        noti.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        document.body.appendChild(noti);
+        setTimeout(() => {
+            noti.style.opacity = '0';
+            setTimeout(() => noti.remove(), 600);
+        }, 2800);
+    });
+    
+    function crearLluviaCorazones() {
+        for(let i = 0; i < 20; i++) {
+            let heart = document.createElement('div');
+            heart.innerHTML = ['💖','💗','💓','💕','💞','❣️','💘'][Math.floor(Math.random()*7)];
+            heart.style.position = 'fixed';
+            heart.style.bottom = '30px';
+            heart.style.right = '30px';
+            heart.style.fontSize = (Math.random() * 16 + 16) + 'px';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.bottom = '0px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '10000';
+            heart.style.opacity = '0.9';
+            heart.style.animation = 'subirCorazon 1.8s ease-out forwards';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 2000);
+        }
+    }
+    // animación keyframe de corazones
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+        @keyframes subirCorazon {
+            0% { transform: translateY(0) scale(0.4); opacity: 1; }
+            100% { transform: translateY(-400px) scale(1.2); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+    
+    // Botón promesa dentro del mensaje especial
+    const promesaBtn = document.getElementById('promesaBtn');
+    promesaBtn.addEventListener('click', () => {
+        const mensajeExtra = document.createElement('div');
+        mensajeExtra.innerText = '🌸 "Dispuesto a todo, incluso a que sanes a tu ritmo, Brenda. No hay prisa, solo mi corazón esperándote." 🌸';
+        mensajeExtra.style.position = 'fixed';
+        mensajeExtra.style.bottom = '40%';
+        mensajeExtra.style.left = '50%';
+        mensajeExtra.style.transform = 'translateX(-50%)';
+        mensajeExtra.style.backgroundColor = '#1e1022dd';
+        mensajeExtra.style.backdropFilter = 'blur(12px)';
+        mensajeExtra.style.padding = '1rem 2rem';
+        mensajeExtra.style.borderRadius = '3rem';
+        mensajeExtra.style.border = '2px solid #ffa5c2';
+        mensajeExtra.style.fontSize = '1.1rem';
+        mensajeExtra.style.textAlign = 'center';
+        mensajeExtra.style.zIndex = '1001';
+        mensajeExtra.style.color = '#fff0f5';
+        mensajeExtra.style.fontWeight = '500';
+        mensajeExtra.style.maxWidth = '80%';
+        mensajeExtra.style.boxShadow = '0 10px 25px rgba(0,0,0,0.4)';
+        document.body.appendChild(mensajeExtra);
+        setTimeout(() => {
+            mensajeExtra.style.opacity = '0';
+            setTimeout(() => mensajeExtra.remove(), 500);
+        }, 3500);
+        
+        // También efecto de pétalos suaves
+        for(let i=0;i<12;i++) {
+            let petal = document.createElement('div');
+            petal.innerHTML = '🌸';
+            petal.style.position = 'fixed';
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            petal.style.top = '-20px';
+            petal.style.fontSize = (Math.random() * 18 + 12) + 'px';
+            petal.style.opacity = '0.7';
+            petal.style.animation = 'caidaPetaleo 3s linear forwards';
+            petal.style.pointerEvents = 'none';
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 3000);
+        }
+    });
+    
+    // keyframes para pétalos
+    const petalStyle = document.createElement('style');
+    petalStyle.textContent = `
+        @keyframes caidaPetaleo {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(750px) rotate(360deg); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(petalStyle);
+    
+    // efecto de bienvenida: un pequeño mensaje de "creer en el amor"
+    window.addEventListener('load', () => {
+        const toast = document.createElement('div');
+        toast.innerText = '💌 Brenda, gracias por devolverme la esperanza. Por ti todo. 💌';
+        toast.style.position = 'fixed';
+        toast.style.top = '20px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = '#a13f64cc';
+        toast.style.backdropFilter = 'blur(14px)';
+        toast.style.padding = '0.7rem 1.5rem';
+        toast.style.borderRadius = '40px';
+        toast.style.fontSize = '0.9rem';
+        toast.style.fontWeight = 'bold';
+        toast.style.color = '#fff0f5';
+        toast.style.border = '1px solid #ffb7cd';
+        toast.style.zIndex = '1000';
+        toast.style.whiteSpace = 'nowrap';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 800);
+        }, 4000);
+    });
+    
+    // Nota: Si deseas ajustar el collage con las fotos reales de Brenda solo tienes que editar los "src" de las imágenes dentro .collage-item img.
+    // El diseño continuará siendo hermoso y con todas las animaciones.
+</script>
 </body>
 </html>
