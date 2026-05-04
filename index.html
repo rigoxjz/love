@@ -1,11 +1,9 @@
-Aquí tienes la versión corregida del `index.html`. He actualizado la presentación para reflejar que estudias Ingeniería Forestal, manteniendo la esencia de "futuro ingeniero" y todos los elementos que me pediste.
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Rigoberto Gómez Jiménez | Futuro Ingeniero Forestal & Creador</title>
+    <title>Rigo Jiménez | Entusiasta Ciberseguridad & Creador</title>
     <style>
         * {
             margin: 0;
@@ -14,303 +12,218 @@ Aquí tienes la versión corregida del `index.html`. He actualizado la presentac
         }
 
         body {
-            background: linear-gradient(135deg, #0a2f1f 0%, #1a4d2a 100%);
-            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Inter', sans-serif;
-            color: #f1f5f9;
+            background: radial-gradient(circle at 10% 30%, #0a0c10, #030507);
+            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, monospace;
+            color: #eef4ff;
             line-height: 1.5;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
         }
 
-        /* Contenedor principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            backdrop-filter: blur(2px);
         }
 
-        /* Tarjeta principal (presentación) */
-        .hero-card {
-            background: rgba(10, 47, 31, 0.7);
-            backdrop-filter: blur(12px);
+        /* Tarjeta principal estilo "holográfico" */
+        .hero {
+            background: rgba(12, 20, 30, 0.55);
+            backdrop-filter: blur(16px);
             border-radius: 3rem;
-            padding: 2.5rem 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
-            transition: transform 0.2s ease;
-            border: 1px solid rgba(255, 215, 150, 0.3);
+            padding: 2.8rem 2rem;
+            margin-bottom: 2.8rem;
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.1);
+            transition: all 0.25s ease;
         }
 
-        .hero-card:hover {
-            transform: translateY(-5px);
+        .hero:hover {
+            border-color: #0ff3;
+            box-shadow: 0 25px 45px -14px rgba(0, 255, 255, 0.2);
         }
 
         .nombre {
-            font-size: 3rem;
+            font-size: 3.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #e9f5a0, #b9fbc0, #6fbf4c);
+            background: linear-gradient(135deg, #f0f9ff, #a5f0ff, #5dade2);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 0.25rem;
+            text-shadow: 0 0 8px rgba(0,160,255,0.3);
         }
 
-        .tagline {
-            font-size: 1.3rem;
+        .badge-titulo {
+            font-size: 1.25rem;
             font-weight: 500;
-            color: #d9f0cf;
-            border-left: 4px solid #7cb342;
+            color: #b9f3ff;
+            border-left: 3px solid #0ff;
             padding-left: 1rem;
-            margin: 1rem 0 1.2rem 0;
+            margin: 1rem 0 1rem 0;
+            background: linear-gradient(90deg, #0ff1, transparent);
+            display: inline-block;
+            border-radius: 0 12px 12px 0;
         }
 
         .descripcion {
             font-size: 1.1rem;
-            color: #e2f0da;
-            max-width: 85%;
-            margin-bottom: 2rem;
+            color: #cdedff;
+            max-width: 90%;
+            margin: 1.2rem 0 1.8rem 0;
+            line-height: 1.5;
         }
 
-        /* badges o etiquetas */
-        .badges {
+        /* badges estilo "herramientas" */
+        .stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0 1.2rem;
         }
 
-        .badge {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 0.4rem 1rem;
+        .pill {
+            background: #0a111ccc;
+            padding: 0.4rem 1.2rem;
             border-radius: 40px;
             font-size: 0.85rem;
             font-weight: 500;
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(124, 179, 66, 0.5);
-            color: #d4f7c2;
+            border: 1px solid #2c6e9e;
+            color: #b9f3ff;
+            font-family: monospace;
         }
 
-        .badge-code {
-            border-color: #3b82f6;
-            color: #93c5fd;
+        .pill-glow {
+            border-color: #0ff;
+            box-shadow: 0 0 6px #0ff3;
         }
 
-        .badge-series {
-            border-color: #a855f7;
-            color: #d8b4fe;
+        /* Redes sociales - botones tipo matrix */
+        .redes-block {
+            margin: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        /* Botones redes */
-        .redes-section {
-            margin: 2rem 0 1rem 0;
-        }
-
-        .btn-red {
+        .btn-social {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 0.75rem 1.5rem;
+            background: rgba(0, 20, 30, 0.7);
+            padding: 0.7rem 1.6rem;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.25s;
-            margin-right: 1rem;
-            margin-bottom: 0.75rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(0, 255, 255, 0.4);
             color: white;
-            font-size: 0.95rem;
+            font-size: 1rem;
             backdrop-filter: blur(8px);
+            font-family: monospace;
+            letter-spacing: 0.3px;
         }
 
-        .btn-red i {
+        .btn-social i {
             font-style: normal;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 1.2rem;
         }
 
-        .btn-red:hover {
+        .btn-social:hover {
             transform: translateY(-3px);
-            background: rgba(0, 0, 0, 0.7);
-            border-color: #7cb342;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: #0ff2;
+            border-color: #0ff;
+            box-shadow: 0 0 12px #0ff5;
+            color: #fff;
         }
 
-        .btn-github {
-            background: #181717cc;
-            border-color: #f0f6fc44;
-        }
-        .btn-github:hover {
-            border-color: #7cb342;
-        }
-        .btn-instagram {
-            background: #d62976cc;
-        }
-        .btn-facebook {
-            background: #1877f2cc;
-        }
-
-        /* Secciones estilo */
-        .section-card {
-            background: rgba(20, 55, 35, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 2rem;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(200, 230, 150, 0.2);
-            transition: all 0.2s;
-        }
-
+        /* tarjetas de repos / proyectos inspiradas en github */
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
-            display: inline-block;
-            background: linear-gradient(120deg, #c5e99b, #8bc34a);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.3px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #0ff;
+            padding-left: 1rem;
+            background: linear-gradient(90deg, #00ffff08, transparent);
         }
 
-        .gustos-grid {
+        .repo-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .gusto-item {
-            background: #0f2a1bcc;
-            padding: 0.7rem 1.2rem;
-            border-radius: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
-        }
-
-        .emoji {
-            font-size: 1.6rem;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
-        }
-
-        /* Comentarios */
-        .comentarios-area {
-            background: #0f2a1b;
-            border-radius: 1.5rem;
-            padding: 1.8rem;
-            margin-top: 1rem;
-            border: 1px solid #4c7a34;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #cce6c0;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            background: #1d3e2a;
-            border: 1px solid #5f8b4a;
-            border-radius: 1rem;
-            color: white;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #8bc34a;
-            box-shadow: 0 0 0 3px rgba(139,195,74,0.3);
-        }
-
-        button {
-            background: linear-gradient(95deg, #6fbf4c, #558b2f);
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 2rem;
-            font-weight: bold;
-            font-size: 1rem;
-            color: white;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        button:hover {
-            transform: scale(1.02);
-            background: linear-gradient(95deg, #83d45a, #6a9e3a);
-            box-shadow: 0 8px 18px rgba(107, 191, 76, 0.4);
-        }
-
-        #comentariosLista {
-            margin-top: 2rem;
-            border-top: 1px solid #4c7a34;
-            padding-top: 1.5rem;
-        }
-
-        .comentario-item {
-            background: #1d3e2ad9;
-            padding: 1rem;
-            border-radius: 1.2rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid #8bc34a;
-            backdrop-filter: blur(4px);
-        }
-
-        .comentario-nombre {
-            font-weight: bold;
-            color: #c5e99b;
-        }
-
-        .comentario-texto {
-            margin-top: 0.3rem;
-            color: #e8f0e0;
-        }
-
-        .comentario-fecha {
-            font-size: 0.7rem;
-            color: #b8d9a6;
-            text-align: right;
             margin-top: 0.5rem;
+        }
+
+        .repo-card {
+            background: #0e1622aa;
+            backdrop-filter: blur(10px);
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            flex: 1 1 280px;
+            border: 1px solid #2a3a55;
+            transition: all 0.2s;
+        }
+
+        .repo-card:hover {
+            border-color: #0ff7;
+            transform: translateY(-4px);
+            background: #0f1a28cc;
+        }
+
+        .repo-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: monospace;
+            color: #9bd7ff;
+        }
+
+        .repo-desc {
+            margin: 0.6rem 0;
+            color: #c0e0ff;
+            font-size: 0.9rem;
+        }
+
+        .repo-meta {
+            font-size: 0.75rem;
+            color: #7e9ec5;
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .badge-language {
+            background: #0ff2;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-family: monospace;
         }
 
         footer {
             text-align: center;
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: #cbe5bc;
-            border-top: 1px solid #4c7a34;
-            padding-top: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #6c8fb0;
+            border-top: 1px solid #1f3550;
+            padding-top: 1.8rem;
         }
 
         @media (max-width: 700px) {
             .nombre {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             .descripcion {
                 max-width: 100%;
             }
-            .hero-card {
-                padding: 1.5rem;
+            .hero {
+                padding: 1.8rem;
             }
-            .section-card {
-                padding: 1.3rem;
-            }
-            .btn-red {
-                padding: 0.6rem 1.2rem;
-                margin-right: 0.6rem;
+            .btn-social {
+                padding: 0.5rem 1.2rem;
                 font-size: 0.85rem;
             }
         }
@@ -318,232 +231,157 @@ Aquí tienes la versión corregida del `index.html`. He actualizado la presentac
 </head>
 <body>
 <div class="container">
-    <!-- Tarjeta principal de presentación -->
-    <div class="hero-card">
-        <h1 class="nombre">Rigoberto Gómez Jiménez</h1>
-        <div class="tagline">
-            🌲 Alguien que intenta jugar a ser ingeniero → futuro ingeniero forestal
-        </div>
+    <!-- Presentación principal -->
+    <div class="hero">
+        <h1 class="nombre">✨ Rigo Jiménez ✨</h1>
+        <div class="badge-titulo">⚡ Entusiasta de ciberseguridad · Creador · Dev under construction ⚡</div>
         <div class="descripcion">
-            Estudiante de Ingeniería Forestal con alma de programador. Me encanta combinar la ciencia de los ecosistemas con la tecnología para crear soluciones innovadoras. Aprendo cada día, escribo código y cuido la naturaleza. Porque los bosques también necesitan líneas de código bien escritas 🌱💻
+            Pequeño gran entusiasta que se dedica a aprender ciberseguridad, programar herramientas y compartir conocimiento. 
+            Aquí encontrarás algunos de los proyectos que voy creando en mis tiempos libres — scripts, bots, utils y experimentos digitales.<br>
+            💬 ¿Dudas, comentarios o sugerencias? Siempre disponibles en mis redes sociales.
         </div>
-        <div class="badges">
-            <span class="badge">🌿 Futuro Ingeniero Forestal</span>
-            <span class="badge badge-code">💻 Programador autodidacta</span>
-            <span class="badge badge-series">🎬 Series & Películas lover</span>
-            <span class="badge">⚙️ Tecnología + Naturaleza = Mi motor</span>
+        <div class="stack">
+            <span class="pill">🐚 Bash</span>
+            <span class="pill">🐍 Python</span>
+            <span class="pill">📱 Termux · Ngrok</span>
+            <span class="pill">🤖 Telegram Bots</span>
+            <span class="pill">🛡️ Cybersecurity learner</span>
+            <span class="pill pill-glow">🔧 Herramientas caseras</span>
         </div>
-        <div class="redes-section">
-            <a href="https://github.com/tuusuario" target="_blank" class="btn-red btn-github" id="githubLink">
+        <div class="redes-block">
+            <a href="https://github.com/r1gox" target="_blank" class="btn-social" id="githubMainBtn">
                 <i>🐙</i> GitHub
             </a>
-            <a href="https://instagram.com/tuusuario" target="_blank" class="btn-red btn-instagram" id="instagramLink">
+            <a href="https://instagram.com/tuusuario" target="_blank" class="btn-social" id="instagramBtn">
                 <i>📸</i> Instagram
             </a>
-            <a href="https://facebook.com/tuusuario" target="_blank" class="btn-red btn-facebook" id="facebookLink">
+            <a href="https://facebook.com/tuusuario" target="_blank" class="btn-social" id="facebookBtn">
                 <i>📘</i> Facebook
             </a>
         </div>
-        <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">
-            🌐 Conéctate conmigo, compartamos visiones, bosques y código.
+        <div style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.7;">
+            <span>🛸 "aprender, romper, construir y proteger"</span>
         </div>
     </div>
 
-    <!-- Sección: Gustos personales -->
-    <div class="section-card">
-        <h2 class="section-title">🌲 Lo que me mueve</h2>
-        <div class="gustos-grid">
-            <div class="gusto-item"><span class="emoji">💻</span> Programación (Web, Python, automatización)</div>
-            <div class="gusto-item"><span class="emoji">🎬</span> Ver series y películas (ciencia ficción, documentales de naturaleza, thrillers)</div>
-            <div class="gusto-item"><span class="emoji">🍿</span> Maratones los fines de semana</div>
-            <div class="gusto-item"><span class="emoji">🌳</span> Inventar herramientas tech para el mundo forestal</div>
-            <div class="gusto-item"><span class="emoji">📚</span> Aprender de ecosistemas y de código abierto</div>
-        </div>
-        <p style="margin-top: 1.2rem; background: #00000030; padding: 0.6rem 1rem; border-radius: 2rem; font-size: 0.9rem;">
-            💡 "La programación me permite soñar en digital, y la ingeniería forestal me conecta con lo real. Juntas, pueden cambiar el mundo."
-        </p>
-    </div>
-
-    <!-- Sección: Ingeniero en construcción (versión forestal + tecnología) -->
-    <div class="section-card">
-        <h2 class="section-title">🧠 Ingeniero forestal en formación & tecnólogo por pasión</h2>
-        <p style="margin-bottom: 1rem;">Mi camino combinará lo mejor de dos mundos: el conocimiento del bosque, conservación y manejo sostenible, con herramientas digitales, análisis de datos y desarrollo de software. <strong>"Jugar a ser ingeniero"</strong> es mi forma de construir, equivocarme y crecer hasta convertirme en un profesional íntegro que una la tierra con la innovación.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem;">
-            <span style="background:#0f2a1b; padding:0.3rem 0.8rem; border-radius:30px;">📊 Datos ambientales</span>
-            <span style="background:#0f2a1b; padding:0.3rem 0.8rem; border-radius:30px;">⚡ Automatización + sensores</span>
-            <span style="background:#0f2a1b; padding:0.3rem 0.8rem; border-radius:30px;">🤖 Lógica y creatividad ecológica</span>
-            <span style="background:#0f2a1b; padding:0.3rem 0.8rem; border-radius:30px;">🌐 Desarrollo con propósito verde</span>
-        </div>
-        <div style="margin-top: 1.5rem; background: linear-gradient(90deg, #6fbf4c20, #00000000); padding: 0.8rem; border-radius: 1rem;">
-            🎯 <strong>Meta profesional:</strong> aportar soluciones tecnológicas para el monitoreo de ecosistemas, reforestación inteligente y educación ambiental. ¡El futuro se construye con código y árboles!
-        </div>
-    </div>
-
-    <!-- Sección: Comentarios / dejar mensaje -->
-    <div class="section-card">
-        <h2 class="section-title">💬 Deja un comentario o saludo</h2>
-        <p style="margin-bottom: 1rem; font-size: 0.95rem;">Me encantaría leerte: sugerencias, consejos forestales, para hablar de series o simplemente para saludar. Los comentarios se guardan en tu navegador (demo local).</p>
-        <div class="comentarios-area">
-            <form id="comentarioForm">
-                <div class="form-group">
-                    <label for="nombre">Tu nombre o alias</label>
-                    <input type="text" id="nombre" placeholder="Ej: Claudia, GuardabosquesDev, amante de series" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Comentario</label>
-                    <textarea id="mensaje" rows="3" placeholder="Déjame tu mensaje, crítica constructiva, recomendación de serie, o lo que quieras... 🌱"></textarea>
-                </div>
-                <button type="submit">✉️ Enviar comentario</button>
-            </form>
-            <div id="comentariosLista">
-                <p style="color:#cce0c0; font-style:italic; text-align:center;" id="sinComentariosMsg">Aún no hay comentarios. ¡Sé el primero en dejar un mensaje!</p>
+    <!-- Sección: repositorios destacados (basados en tu perfil) -->
+    <div>
+        <h2 class="section-title">
+            📁 popular repositories
+            <span style="font-size: 0.9rem; background: #0ff1; padding: 0.2rem 0.8rem; border-radius: 30px;">open source · tools</span>
+        </h2>
+        <div class="repo-grid">
+            <div class="repo-card">
+                <div class="repo-name">📱 PhoneInfo</div>
+                <div class="repo-desc">Información de números telefónicos, OSINT ligero. Ideal para learning y CTF.</div>
+                <div class="repo-meta"><span class="badge-language">Shell</span> <span>⭐ 2</span> <span>🍴 1</span></div>
+            </div>
+            <div class="repo-card">
+                <div class="repo-name">🌀 Termux-Ngrok</div>
+                <div class="repo-desc">Exponer servicios locales con Ngrok desde Termux, tunnelling fácil.</div>
+                <div class="repo-meta"><span class="badge-language">Shell</span> <span>⭐ 2</span> <span>🍴 0</span></div>
+            </div>
+            <div class="repo-card">
+                <div class="repo-name">🤖 CheckerBot</div>
+                <div class="repo-desc">Telegram Bot Checker — validador de cuentas / estados.</div>
+                <div class="repo-meta"><span class="badge-language">PHP</span> <span>⭐ 1</span> <span>🍴 1</span></div>
+            </div>
+            <div class="repo-card">
+                <div class="repo-name">⚡ AlyaChkBOT</div>
+                <div class="repo-desc">Checker para distintos servicios, modular y rápido.</div>
+                <div class="repo-meta"><span class="badge-language">PHP</span> <span>⭐ 1</span> <span>🍴 2</span></div>
+            </div>
+            <div class="repo-card">
+                <div class="repo-name">🌑 D4rk</div>
+                <div class="repo-desc">Herramienta experimental en PHP (entorno educacional).</div>
+                <div class="repo-meta"><span class="badge-language">PHP</span> <span>⭐ 0</span> <span>🍴 0</span></div>
             </div>
         </div>
     </div>
+
+    <!-- Sección adicional: gustos personales (programación + series y películas) pero sin ser explícito de carrera -->
+    <div style="margin: 2.8rem 0 1rem 0;">
+        <div style="background: #0a101cd9; border-radius: 2rem; padding: 1.8rem; backdrop-filter: blur(8px); border: 1px solid #2c4766;">
+            <h2 style="font-size: 1.8rem; font-weight: 600; display: flex; gap: 10px; align-items: center;">🎬 + 💻 <span style="font-size: 1rem; background: none; color: #7aaef0;">| más de mí</span></h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
+                <div style="flex:1; min-width: 180px;">
+                    <div style="font-weight: bold; color: #6ee7ff;">⌨️ Programación:</div>
+                    <ul style="margin-top: 8px; list-style: none;">
+                        <li>🐍 Python / Bash / PHP</li>
+                        <li>🌐 Automatización y ciberseguridad</li>
+                        <li>🔧 Construir mis propias herramientas</li>
+                    </ul>
+                </div>
+                <div style="flex:1; min-width: 180px;">
+                    <div style="font-weight: bold; color: #6ee7ff;">🎞️ Series & Películas:</div>
+                    <ul style="margin-top: 8px; list-style: none;">
+                        <li>🕶️ Mr. Robot · Dark · Black Mirror</li>
+                        <li>🎥 Hackers · Matrix · Ready Player One</li>
+                        <li>🍿 Cyber-thrillers y ciencia ficción</li>
+                    </ul>
+                </div>
+                <div style="flex:1; min-width: 180px;">
+                    <div style="font-weight: bold; color: #6ee7ff;">🧠 Siempre aprendiendo:</div>
+                    <ul style="margin-top: 8px; list-style: none;">
+                        <li>🛡️ Ethical Hacking · OSINT · Redes</li>
+                        <li>📡 Desarrollo de bots y scraping ético</li>
+                        <li>⚙️ "Jugar a ser ingeniero" hasta lograrlo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pequeña sección de "futuro ingeniero" sin detallar carrera, solo la idea -->
+    <div style="margin-top: 1.5rem; text-align: center; background: #030b1080; border-radius: 2rem; padding: 1rem; backdrop-filter: blur(4px);">
+        <p style="font-size: 0.95rem;">🚀 <strong>Alguien que intenta jugar a ser ingeniero → futuro ingeniero</strong> · Construyendo habilidades, compartiendo código y explorando la tecnología desde la raíz.</p>
+    </div>
+
     <footer>
-        © 2025 Rigoberto Gómez Jiménez — "Construyendo mi ingeniería entre binarios y bosques" — Hosteado con 🌿 en GitHub Pages
+        <span>r1gox · Ciberseguridad & creación · 2026 — "No hagas ruido, escribe código"</span><br>
+        <span style="font-size:0.7rem;">🌐 hosteado en GitHub Pages · todos mis proyectos en <a href="https://github.com/r1gox" target="_blank" style="color:#6ee7ff;">github.com/r1gox</a></span>
     </footer>
 </div>
 
 <script>
-    // --- Lógica de comentarios con localStorage ---
-    const STORAGE_KEY = "rigo_forest_comments";
-
-    function loadComments() {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        let comments = [];
-        if (stored) {
-            try {
-                comments = JSON.parse(stored);
-            } catch(e) { console.warn(e); comments = []; }
-        }
-        renderComments(comments);
-        return comments;
-    }
-
-    function saveComments(comments) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
-        renderComments(comments);
-    }
-
-    function renderComments(comments) {
-        const container = document.getElementById("comentariosLista");
-        if (!container) return;
-
-        if (!comments || comments.length === 0) {
-            container.innerHTML = `<p style="color:#cbe5bc; font-style:italic; text-align:center;" id="sinComentariosMsg">✨ Aún no hay comentarios. ¡Anímate y escribe algo!</p>`;
-            return;
-        }
-
-        let html = `<div style="margin-bottom:0.5rem;"><strong>📬 ${comments.length} comentario${comments.length !== 1 ? 's' : ''}</strong></div>`;
-        const reversed = [...comments].reverse();
-        reversed.forEach(com => {
-            const fecha = com.fecha ? new Date(com.fecha).toLocaleString() : "fecha desconocida";
-            html += `
-                <div class="comentario-item">
-                    <div class="comentario-nombre">🌿 ${escapeHtml(com.nombre)}</div>
-                    <div class="comentario-texto">${escapeHtml(com.mensaje)}</div>
-                    <div class="comentario-fecha">📅 ${fecha}</div>
-                </div>
-            `;
+    // ===== CONFIGURACIÓN DE ENLACES SOCIALES (REEMPLAZAR) =====
+    // Edita estos valores con tus URLs REALES de Instagram y Facebook.
+    // GitHub ya apunta a tu perfil real: https://github.com/r1gox
+    const GITHUB_URL_REAL = "https://github.com/r1gox";
+    const INSTAGRAM_URL_REAL = "https://instagram.com/tuusuario";   // <--- CAMBIA por tu instagram real
+    const FACEBOOK_URL_REAL = "https://facebook.com/tuusuario";     // <--- CAMBIA por tu facebook real
+    
+    // Asignar a los botones (tanto el del hero como cualquier otro)
+    const githubBtns = document.querySelectorAll("#githubMainBtn, .btn-social[href*='github.com']");
+    const instagramBtns = document.querySelectorAll("#instagramBtn");
+    const facebookBtns = document.querySelectorAll("#facebookBtn");
+    
+    githubBtns.forEach(btn => {
+        if(btn) btn.href = GITHUB_URL_REAL;
+    });
+    instagramBtns.forEach(btn => {
+        if(btn) btn.href = INSTAGRAM_URL_REAL;
+        if(btn && INSTAGRAM_URL_REAL === "https://instagram.com/tuusuario") btn.title = "🔧 Reemplaza con tu usuario real de Instagram";
+    });
+    facebookBtns.forEach(btn => {
+        if(btn) btn.href = FACEBOOK_URL_REAL;
+        if(btn && FACEBOOK_URL_REAL === "https://facebook.com/tuusuario") btn.title = "🔧 Configura tu Facebook personal";
+    });
+    
+    // pequeña advertencia en consola para que actualices tus redes sociales reales
+    console.log("🎯 Personaliza tus redes: edita INSTAGRAM_URL_REAL y FACEBOOK_URL_REAL en el script. GitHub ya apunta a r1gox correctamente.");
+    
+    // efecto secundario de detalles: agregar tooltips al pasar el ratón sobre los repos
+    const repoCards = document.querySelectorAll('.repo-card');
+    repoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const nombreRepo = card.querySelector('.repo-name')?.innerText.trim() || "repositorio";
+            // Redirigir al perfil de GitHub (sección de repos)
+            window.open('https://github.com/r1gox?tab=repositories', '_blank');
         });
-        container.innerHTML = html;
-    }
-
-    function escapeHtml(str) {
-        if (!str) return "";
-        return str.replace(/[&<>]/g, function(m) {
-            if (m === '&') return '&amp;';
-            if (m === '<') return '&lt;';
-            if (m === '>') return '&gt;';
-            return m;
-        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-            return c;
-        });
-    }
-
-    function addComment(nombre, mensaje) {
-        if (!nombre.trim() || !mensaje.trim()) {
-            alert("Por favor, escribe tu nombre y un comentario para compartir.");
-            return false;
-        }
-        const comments = loadComments();
-        const newComment = {
-            id: Date.now(),
-            nombre: nombre.trim().substring(0, 55),
-            mensaje: mensaje.trim().substring(0, 500),
-            fecha: new Date().toISOString()
-        };
-        comments.push(newComment);
-        saveComments(comments);
-        return true;
-    }
-
-    const form = document.getElementById("comentarioForm");
-    if (form) {
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            const nombreInput = document.getElementById("nombre");
-            const mensajeInput = document.getElementById("mensaje");
-            if (nombreInput && mensajeInput) {
-                const exito = addComment(nombreInput.value, mensajeInput.value);
-                if (exito) {
-                    form.reset();
-                    const tempMsg = document.createElement("div");
-                    tempMsg.textContent = "✅ ¡Gracias por tu mensaje! Me ayuda a seguir creciendo.";
-                    tempMsg.style.background = "#1d3e2a";
-                    tempMsg.style.padding = "0.5rem";
-                    tempMsg.style.borderRadius = "2rem";
-                    tempMsg.style.marginTop = "0.8rem";
-                    tempMsg.style.textAlign = "center";
-                    tempMsg.style.fontSize = "0.85rem";
-                    tempMsg.style.border = "1px solid #8bc34a";
-                    form.appendChild(tempMsg);
-                    setTimeout(() => tempMsg.remove(), 3000);
-                } else {
-                    alert("Completa ambos campos para dejar tu huella.");
-                }
-            }
-        });
-    }
-
-    loadComments();
-
-    // --- Gestión de enlaces redes sociales (para que apunten a tus cuentas reales) ---
-    const githubAnchor = document.getElementById("githubLink");
-    const instagramAnchor = document.getElementById("instagramLink");
-    const facebookAnchor = document.getElementById("facebookLink");
-    
-    // ========== ⚠️ IMPORTANTE: REEMPLAZA ESTAS URLS CON TUS PERFILES REALES ==========
-    // Coloca aquí tus enlaces verdaderos de GitHub, Instagram y Facebook.
-    const MI_GITHUB_URL = "https://github.com/tuusuario-rigoberto";    // <--- CAMBIA por tu GitHub real
-    const MI_INSTAGRAM_URL = "https://instagram.com/tuusuario";        // <--- CAMBIA por tu Instagram real
-    const MI_FACEBOOK_URL = "https://facebook.com/tuusuario";          // <--- CAMBIA por tu Facebook real
-    
-    if (githubAnchor) githubAnchor.href = MI_GITHUB_URL;
-    if (instagramAnchor) instagramAnchor.href = MI_INSTAGRAM_URL;
-    if (facebookAnchor) facebookAnchor.href = MI_FACEBOOK_URL;
-    
-    // Tooltips amigables para recordar actualizar si aún están con valores placeholder
-    if (MI_GITHUB_URL === "https://github.com/tuusuario-rigoberto") {
-        if (githubAnchor) githubAnchor.title = "🔧 Reemplaza con tu enlace de GitHub real en el código (MI_GITHUB_URL)";
-    }
-    if (MI_INSTAGRAM_URL === "https://instagram.com/tuusuario") {
-        if (instagramAnchor) instagramAnchor.title = "🔧 Edita la URL de Instagram con tu perfil";
-    }
-    if (MI_FACEBOOK_URL === "https://facebook.com/tuusuario") {
-        if (facebookAnchor) facebookAnchor.title = "🔧 Coloca tu URL de Facebook personal";
-    }
-    
-    console.log("🌱 Personaliza tus redes: edita las constantes MI_GITHUB_URL, MI_INSTAGRAM_URL, MI_FACEBOOK_URL en el script.");
-    
-    // Footer año dinámico
-    const footer = document.querySelector("footer");
-    if (footer) {
-        const año = new Date().getFullYear();
-        footer.innerHTML = footer.innerHTML.replace("2025", año);
-    }
+        card.style.cursor = 'pointer';
+        card.title = 'Ver más en GitHub →';
+    });
 </script>
 </body>
 </html>
-```
