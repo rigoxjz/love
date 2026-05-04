@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Para Brenda | Mi razón para creer</title>
+    <title>Rigoberto Gómez Jiménez | Futuro Ingeniero y Apasionado por la Programación</title>
     <style>
         * {
             margin: 0;
@@ -12,625 +12,568 @@
         }
 
         body {
-            background: linear-gradient(145deg, #1a0b1f 0%, #2e1a2f 100%);
-            font-family: 'Segoe UI', 'Poppins', 'Quicksand', system-ui, -apple-system, 'Inter', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 1.5rem;
-            color: #f9eef7;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Inter', sans-serif;
+            color: #f1f5f9;
+            line-height: 1.5;
+            padding: 2rem 1rem;
         }
 
         /* Contenedor principal */
-        .carta-corazon {
-            max-width: 1300px;
-            width: 100%;
-            background: rgba(25, 12, 28, 0.55);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             backdrop-filter: blur(2px);
+        }
+
+        /* Tarjeta principal (presentación) */
+        .hero-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
             border-radius: 3rem;
-            padding: 1.8rem;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.4), 0 0 0 1px rgba(255, 200, 220, 0.15);
-            transition: all 0.3s ease;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            transition: transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* SECCIÓN HEADER */
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+        .hero-card:hover {
+            transform: translateY(-5px);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #FFD6E8, #FFB3C6, #FF8FAB);
+        .nombre {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFE6B0, #FFB347, #38bdf8);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            letter-spacing: -0.5px;
-            animation: suaveBrillo 3s infinite alternate;
-            display: inline-block;
-            font-weight: 700;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        @keyframes suaveBrillo {
-            0% { filter: drop-shadow(0 0 2px #ffb7c5);}
-            100% { filter: drop-shadow(0 0 12px #ff7a9e);}
-        }
-
-        .subtitulo {
+        .tagline {
             font-size: 1.3rem;
-            margin-top: 0.75rem;
-            font-weight: 400;
-            background: rgba(255, 235, 240, 0.15);
-            display: inline-block;
-            padding: 0.4rem 1.5rem;
-            border-radius: 60px;
-            backdrop-filter: blur(5px);
-            letter-spacing: 1px;
+            font-weight: 500;
+            color: #cbd5e6;
+            border-left: 4px solid #f97316;
+            padding-left: 1rem;
+            margin: 1rem 0 1.2rem 0;
         }
 
-        /* COLLAGE DE FOTOS - ELEMENTO PRINCIPAL */
-        .collage-amor {
-            margin: 3rem 0;
-            position: relative;
+        .descripcion {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            max-width: 85%;
+            margin-bottom: 2rem;
         }
 
-        .grid-collage {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            grid-auto-rows: 220px;
+        /* badges o etiquetas */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
         }
 
-        /* estilos para cada foto - efecto artistico */
-        .collage-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 2rem;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            background: #2c1e2a;
-        }
-
-        .collage-item:hover {
-            transform: scale(1.02) translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(255, 170, 200, 0.5);
-        }
-
-        .collage-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease, filter 0.4s;
-            filter: brightness(0.96) contrast(1.05);
-        }
-
-        .collage-item:hover img {
-            transform: scale(1.06);
-            filter: brightness(1.02) contrast(1.08);
-        }
-
-        /* overlay con texto sutil */
-        .photo-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            padding: 1rem 0.8rem 0.5rem;
-            color: #fff4e8;
+        .badge {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
             font-size: 0.85rem;
             font-weight: 500;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-            backdrop-filter: blur(2px);
-            font-style: italic;
-        }
-
-        .collage-item:hover .photo-caption {
-            transform: translateY(0);
-        }
-
-        /* diferentes tamaños */
-        .item-tall {
-            grid-row: span 2;
-        }
-
-        .item-wide {
-            grid-column: span 2;
-        }
-
-        /* mensaje principal - carta de amor */
-        .mensaje-especial {
-            background: rgba(44, 24, 46, 0.7);
-            backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            padding: 2rem 2rem;
-            margin: 2.5rem 0;
-            border-left: 7px solid #ff8aa7;
-            border-right: 2px solid rgba(255, 190, 210, 0.4);
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .mensaje-especial p {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            font-weight: 400;
-            margin-bottom: 1.2rem;
-        }
-
-        .mensaje-especial .frase-fuerte {
-            font-size: 1.5rem;
-            font-weight: 600;
-            background: linear-gradient(120deg, #FFC0CB, #FFB347);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            display: inline-block;
-            margin: 0.5rem 0;
-        }
-
-        .btn-corazon {
-            background: rgba(255, 110, 140, 0.2);
-            border: 1.5px solid #ff98b2;
-            padding: 0.6rem 1.8rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #ffeef2;
-            margin-top: 0.8rem;
             backdrop-filter: blur(4px);
-            transition: 0.2s;
-            cursor: pointer;
-            display: inline-block;
+            border: 1px solid rgba(255, 165, 0, 0.4);
+            color: #ffd89a;
         }
 
-        .btn-corazon:hover {
-            background: #ff8aab;
-            color: #2b0e23;
-            border-color: #ffbfd0;
-            transform: scale(0.98);
+        .badge-code {
+            border-color: #3b82f6;
+            color: #93c5fd;
         }
 
-        /* frase de dedicación total */
-        .promesa {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            margin: 2rem 0 1.5rem;
-            text-align: center;
+        .badge-series {
+            border-color: #a855f7;
+            color: #d8b4fe;
         }
 
-        .card-promesa {
-            background: rgba(0,0,0,0.25);
-            padding: 1rem 1.5rem;
-            border-radius: 3rem;
-            width: auto;
-            font-weight: 500;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 185, 200, 0.4);
-            backdrop-filter: blur(6px);
+        /* Botones redes */
+        .redes-section {
+            margin: 2rem 0 1rem 0;
+        }
+
+        .btn-red {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.75rem 1.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.25s;
+            margin-right: 1rem;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.95rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-red i {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .btn-red:hover {
+            transform: translateY(-3px);
+            background: rgba(0, 0, 0, 0.7);
+            border-color: #f97316;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-github {
+            background: #181717cc;
+            border-color: #f0f6fc44;
+        }
+        .btn-github:hover {
+            border-color: #f97316;
+        }
+        .btn-instagram {
+            background: #d62976cc;
+        }
+        .btn-facebook {
+            background: #1877f2cc;
+        }
+
+        /* Secciones estilo */
+        .section-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,240,0.1);
             transition: all 0.2s;
         }
 
-        .card-promesa i {
-            font-style: normal;
-            font-size: 1.3rem;
-            margin-right: 8px;
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            background: linear-gradient(120deg, #ffb347, #ff8c42);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
         }
 
-        /* Sección de "por qué Brenda me hizo creer" */
-        .creer-section {
+        .gustos-grid {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
             flex-wrap: wrap;
-            margin: 2rem 0 1rem;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .creer-card {
-            flex: 1;
-            min-width: 180px;
-            background: rgba(47, 30, 51, 0.6);
-            backdrop-filter: blur(4px);
-            border-radius: 1.8rem;
-            padding: 1.2rem;
-            text-align: center;
-            font-weight: 400;
-            border-bottom: 3px solid #ff96af;
-        }
-
-        /* animaciones flotantes */
-        @keyframes flotar {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-6px); }
-        }
-
-        .floating {
-            animation: flotar 3s infinite alternate ease-in-out;
-        }
-
-        /* Responsive */
-        @media (max-width: 700px) {
-            .carta-corazon {
-                padding: 1rem;
-            }
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            .grid-collage {
-                grid-auto-rows: 180px;
-                gap: 0.9rem;
-            }
-            .item-wide {
-                grid-column: span 1;
-            }
-            .item-tall {
-                grid-row: span 1;
-            }
-            .mensaje-especial p {
-                font-size: 1rem;
-            }
-            .subtitulo {
-                font-size: 1rem;
-            }
-        }
-
-        /* Boton flotante de latido */
-        .latido-boton {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #ff77a0;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+        .gusto-item {
+            background: #0f172a80;
+            padding: 0.7rem 1.2rem;
+            border-radius: 2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 14px #ff6f8f;
-            cursor: pointer;
-            font-size: 28px;
-            transition: 0.2s;
-            z-index: 99;
-            border: none;
+            gap: 10px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .emoji {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+        }
+
+        /* Comentarios */
+        .comentarios-area {
+            background: #0f172a;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            margin-top: 1rem;
+            border: 1px solid #334155;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 1rem;
             color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: 0.2s;
         }
 
-        .latido-boton:hover {
-            transform: scale(1.1);
-            background: #ff5e8a;
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.2);
         }
 
-        /* modal de fotos ampliadas (opcional) */
-        .modal-foto {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(12px);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            cursor: pointer;
-        }
-        .modal-img {
-            max-width: 85%;
-            max-height: 85%;
+        button {
+            background: linear-gradient(95deg, #f97316, #ea580c);
+            border: none;
+            padding: 0.8rem 2rem;
             border-radius: 2rem;
-            box-shadow: 0 0 30px #ffb0c3;
-            border: 4px solid #ffc0d0;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        /* texto elegante */
-        .corazon-texto {
-            font-size: 1.2rem;
-            font-weight: 300;
+        button:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #fd842c, #f05c0c);
+            box-shadow: 0 8px 18px rgba(249,115,22,0.3);
         }
-        hr {
-            width: 80px;
-            margin: 1rem auto;
-            border: 1px solid #ffb2c7;
+
+        #comentariosLista {
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+            padding-top: 1.5rem;
+        }
+
+        .comentario-item {
+            background: #1e293b70;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #f97316;
+            backdrop-filter: blur(4px);
+        }
+
+        .comentario-nombre {
+            font-weight: bold;
+            color: #ffb347;
+        }
+
+        .comentario-texto {
+            margin-top: 0.3rem;
+            color: #e2e8f0;
+        }
+
+        .comentario-fecha {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .nombre {
+                font-size: 2.2rem;
+            }
+            .descripcion {
+                max-width: 100%;
+            }
+            .hero-card {
+                padding: 1.5rem;
+            }
+            .section-card {
+                padding: 1.3rem;
+            }
+            .btn-red {
+                padding: 0.6rem 1.2rem;
+                margin-right: 0.6rem;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="carta-corazon">
-    <div class="hero">
-        <h1>✨ Para Brenda ✨</h1>
-        <div class="subtitulo">
-            🌸 la luz que me hizo volver a creer 🌸
+<div class="container">
+    <!-- Tarjeta principal de presentación -->
+    <div class="hero-card">
+        <h1 class="nombre">Rigoberto Gómez Jiménez</h1>
+        <div class="tagline">
+            🚀 Alguien que intenta jugar a ser ingeniero → futuro ingeniero
+        </div>
+        <div class="descripcion">
+            Apasionado por la tecnología, el código y la construcción de soluciones. 
+            Me encanta aprender cada día, romper esquemas y crear proyectos que combinen lógica y creatividad. 
+            Actualmente forjando mi camino hacia la ingeniería con mucho esfuerzo, café y líneas de código.
+        </div>
+        <div class="badges">
+            <span class="badge">🎓 Futuro Ingeniero en Sistemas</span>
+            <span class="badge badge-code">💻 Programador entusiasta</span>
+            <span class="badge badge-series">🎬 Series & Películas lover</span>
+            <span class="badge">⚙️ "Jugar a ser ingeniero" es el primer paso para serlo</span>
+        </div>
+        <div class="redes-section">
+            <a href="https://github.com/tuusuario" target="_blank" class="btn-red btn-github" id="githubLink">
+                <i>🐙</i> GitHub
+            </a>
+            <a href="https://instagram.com/tuusuario" target="_blank" class="btn-red btn-instagram" id="instagramLink">
+                <i>📸</i> Instagram
+            </a>
+            <a href="https://facebook.com/tuusuario" target="_blank" class="btn-red btn-facebook" id="facebookLink">
+                <i>📘</i> Facebook
+            </a>
+        </div>
+        <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">
+            ⚡ Conéctate conmigo, sigamos creciendo juntos.
         </div>
     </div>
 
-    <!-- COLLAGE DE FOTOS - reemplazar las imágenes por las reales de Brenda -->
-    <div class="collage-amor">
-        <div class="grid-collage" id="collageGrid">
-            <!-- FOTO 1 -->
-            <div class="collage-item item-tall" data-img="https://picsum.photos/id/20/400/500?grayscale&seed=brenda1">
-                <img src="https://picsum.photos/id/20/400/500?grayscale&seed=brenda1" alt="Sonrisa Brenda">
-                <div class="photo-caption">💖 Tu sonrisa lo cambia todo 💖</div>
-            </div>
-            <!-- FOTO 2 -->
-            <div class="collage-item" data-img="https://picsum.photos/id/64/500/400?seed=brenda2">
-                <img src="https://picsum.photos/id/64/500/400?seed=brenda2" alt="Brenda especial">
-                <div class="photo-caption">🌙 Eres mi sueño hecho realidad 🌙</div>
-            </div>
-            <!-- FOTO 3 -->
-            <div class="collage-item item-wide" data-img="https://picsum.photos/id/169/800/400?seed=brenda3">
-                <img src="https://picsum.photos/id/169/800/400?seed=brenda3" alt="Brenda feliz">
-                <div class="photo-caption">☀️ La persona más auténtica que conozco ☀️</div>
-            </div>
-            <!-- FOTO 4 -->
-            <div class="collage-item" data-img="https://picsum.photos/id/26/400/400?seed=brenda4">
-                <img src="https://picsum.photos/id/26/400/400?seed=brenda4" alt="Mirada Brenda">
-                <div class="photo-caption">👁️ Tus ojos tienen mi universo 👁️</div>
-            </div>
-            <!-- FOTO 5 -->
-            <div class="collage-item item-tall" data-img="https://picsum.photos/id/30/400/500?seed=brenda5">
-                <img src="https://picsum.photos/id/30/400/500?seed=brenda5" alt="Magia Brenda">
-                <div class="photo-caption">✨ Magia en cada gesto ✨</div>
-            </div>
-            <!-- FOTO 6 -->
-            <div class="collage-item" data-img="https://picsum.photos/id/42/450/450?seed=brenda6">
-                <img src="https://picsum.photos/id/42/450/450?seed=brenda6" alt="Brenda arte">
-                <div class="photo-caption">🎨 Eres mi obra favorita 🎨</div>
-            </div>
-            <!-- FOTO 7 extra -->
-            <div class="collage-item" data-img="https://picsum.photos/id/100/450/450?seed=brenda7">
-                <img src="https://picsum.photos/id/100/450/450?seed=brenda7" alt="Brenda corazón">
-                <div class="photo-caption">💗 Mi latido más sincero 💗</div>
-            </div>
+    <!-- Sección: Gustos personales -->
+    <div class="section-card">
+        <h2 class="section-title">✨ Lo que me mueve</h2>
+        <div class="gustos-grid">
+            <div class="gusto-item"><span class="emoji">💻</span> Programación (Frontend, Backend, siempre explorando)</div>
+            <div class="gusto-item"><span class="emoji">🎬</span> Ver series y películas (ciencia ficción, thrillers, animación)</div>
+            <div class="gusto-item"><span class="emoji">🍿</span> Maratones de series los fines de semana</div>
+            <div class="gusto-item"><span class="emoji">🛠️</span> Construir proyectos personales para aprender</div>
+            <div class="gusto-item"><span class="emoji">📚</span> Leer sobre arquitectura de software</div>
         </div>
-        <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* Toca cualquier foto para verla más grande *</p>
+        <p style="margin-top: 1.2rem; background: #00000030; padding: 0.6rem 1rem; border-radius: 2rem; font-size: 0.9rem;">
+            💡 "No solo código: disfruto contar historias a través del desarrollo, y por supuesto, nunca falta una buena serie para inspirarme."
+        </p>
     </div>
 
-    <!-- MENSAJE CENTRAL: Aceptación, sanar juntos, amor incondicional -->
-    <div class="mensaje-especial">
-        <p>🌷 <strong>Brenda</strong>, tal vez las heridas del pasado aún duelen, y no sabes si estás lista para sentir de nuevo. Pero quiero que sepas algo...</p>
-        <p>🌹 <span class="frase-fuerte">"No importa si necesitas tiempo, sanar a tu ritmo o incluso usarme como apoyo; yo elijo quedarme."</span> 🌹</p>
-        <p>🕊️ No quiero apresurar tu corazón, solo caminar a tu lado. Si amas a otra persona que te lastimó y sientes confusión, está bien. Entiendo que el miedo habla más fuerte que el deseo. Pero te prometo que mis brazos nunca te harán daño.</p>
-        <p>💫 Porque gracias a ti volví a creer en el amor. Me enseñaste que vale la pena entregarlo todo si es por alguien como tú. Y si necesitas sanar... <strong>sanaremos juntos, paso a paso, sin presiones, solo con honestidad y compañía.</strong></p>
-        <div class="btn-corazon" id="promesaBtn">🌸 Escucha mi latido por ti 🌸</div>
-    </div>
-
-    <!-- Sección promesa de entrega total -->
-    <div class="promesa">
-        <div class="card-promesa floating"><i>❤️</i> Disfruto tu felicidad antes que la mía</div>
-        <div class="card-promesa floating" style="animation-delay: 0.2s;"><i>🌟</i> Quiero ayudarte a cicatrizar</div>
-        <div class="card-promesa floating" style="animation-delay: 0.4s;"><i>🌻</i> Mi vida es tuya si me lo permites</div>
-    </div>
-
-    <!-- Pequeña razón por la que ella me hizo creer en el amor -->
-    <div class="creer-section">
-        <div class="creer-card">
-            ✨ <strong>Autenticidad</strong> ✨<br>
- "Me mostraste que amar no es perfecto, es real"
+    <!-- Sección: pequeños datos ingenieriles + aspiración -->
+    <div class="section-card">
+        <h2 class="section-title">🧠 Ingeniero en construcción</h2>
+        <p style="margin-bottom: 1rem;">Actualmente me preparo para ejercer la ingeniería con pasión, aprendiendo desde fundamentos hasta tecnologías modernas. Mi filosofía: <strong>"jugar a ser ingeniero" con honestidad, errores y logros, hasta convertirme en un profesional íntegro.</strong></p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem;">
+            <span style="background:#0f172a; padding:0.3rem 0.8rem; border-radius:30px;">📐 Resolución de problemas</span>
+            <span style="background:#0f172a; padding:0.3rem 0.8rem; border-radius:30px;">⚡ Optimización de código</span>
+            <span style="background:#0f172a; padding:0.3rem 0.8rem; border-radius:30px;">🤖 Lógica + creatividad</span>
+            <span style="background:#0f172a; padding:0.3rem 0.8rem; border-radius:30px;">🌐 Siempre en beta</span>
         </div>
-        <div class="creer-card">
-            💖 <strong>Valentía</strong> 💖<br>
- "A pesar del dolor, sigues siendo tierna"
-        </div>
-        <div class="creer-card">
-            🌙 <strong>Fuerza</strong> 🌙<br>
- "Tu vulnerabilidad me hizo querer protegerte siempre"
+        <div style="margin-top: 1.5rem; background: linear-gradient(90deg, #f9731620, #00000000); padding: 0.8rem; border-radius: 1rem;">
+            🎯 <strong>Objetivo:</strong> Fusionar el mundo del desarrollo de software con la ingeniería tradicional para crear impacto real. ¡Y compartir el proceso!
         </div>
     </div>
 
-    <hr>
-    <p style="text-align: center; font-size: 0.9rem; padding: 0.8rem;">"Por Brenda, porque merece un amor que no lastime, que espere, que respete su proceso. Yo estaré aquí, sin condiciones. Solo tú." <br> — Alguien que te ama profundamente —</p>
-</div>
-
-<!-- Botón flotante con efecto corazón -->
-<div class="latido-boton" id="corazonFlotante">
-    💓
-</div>
-
-<!-- modal para ampliar fotos -->
-<div id="modalFotos" class="modal-foto">
-    <img class="modal-img" id="modalImagen" alt="ampliación">
+    <!-- Sección: Comentarios / dejar mensaje -->
+    <div class="section-card">
+        <h2 class="section-title">💬 Deja un comentario o saludo</h2>
+        <p style="margin-bottom: 1rem; font-size: 0.95rem;">Me encantaría saber qué piensas, algún consejo, o simplemente un hola. Los comentarios se guardan localmente (demo persistente).</p>
+        <div class="comentarios-area">
+            <form id="comentarioForm">
+                <div class="form-group">
+                    <label for="nombre">Tu nombre o alias</label>
+                    <input type="text" id="nombre" placeholder="Ej: Claudia, RigoFan, Dev colega" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Comentario</label>
+                    <textarea id="mensaje" rows="3" placeholder="Déjame tu mensaje, sugerencia, o saludo..."></textarea>
+                </div>
+                <button type="submit">✉️ Enviar comentario</button>
+            </form>
+            <div id="comentariosLista">
+                <p style="color:#94a3b8; font-style:italic; text-align:center;" id="sinComentariosMsg">Aún no hay comentarios. ¡Sé el primero en dejar un mensaje!</p>
+                <!-- Aquí se renderizan dinámicamente los comentarios -->
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2025 Rigoberto Gómez Jiménez — "Jugando a ser ingeniero, aprendiendo a volar" — Hosteado con orgullo en GitHub Pages 🚀
+    </footer>
 </div>
 
 <script>
-    // ---------- Función para reemplazar las imágenes de ejemplo con fotos reales de BRENDA ----------
-    // INSTRUCCIÓN: Si tienes fotos reales de Brenda, cambia las URLs de "https://picsum.photos/..." 
-    // por las rutas de tus imágenes (pueden ser locales o subidas a internet). 
-    // He puesto un collage placeholder, pero puedes añadir las verdaderas en el array "fotosReales".
-    // También puede mantener las actuales y solo cambiar los src de cada imagen, es fácil.
-    // Voy a dejar un bloque de ejemplo para que reemplaces con las imágenes de Brenda.
-    // Por ahora, el código funciona con imágenes placeholder, pero he comentado una forma de sustituirlas todas.
-    
-    // Si quieres asignar tus propias fotos de Brenda, descomenta el siguiente bloque y cambia las rutas.
-    // Ejemplo de reemplazo automático:
-    /*
-    const fotosVerdaderasBrenda = [
-        "ruta/foto1_brenda.jpg",
-        "ruta/foto2_brenda.jpg",
-        "ruta/foto3_brenda.jpg",
-        "ruta/foto4_brenda.jpg",
-        "ruta/foto5_brenda.jpg",
-        "ruta/foto6_brenda.jpg",
-        "ruta/foto7_brenda.jpg"
-    ];
-    const todasImgs = document.querySelectorAll('.collage-item img');
-    if(todasImgs.length === fotosVerdaderasBrenda.length && fotosVerdaderasBrenda[0] !== "ruta/foto1_brenda.jpg"){
-        todasImgs.forEach((img, idx) => {
-            img.src = fotosVerdaderasBrenda[idx];
-            img.alt = "Brenda " + (idx+1);
+    // --- Lógica de comentarios con localStorage ---
+    // Clave para almacenar comentarios
+    const STORAGE_KEY = "rigo_portafolio_comments";
+
+    // Función para cargar comentarios guardados
+    function loadComments() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        let comments = [];
+        if (stored) {
+            try {
+                comments = JSON.parse(stored);
+            } catch(e) { console.warn(e); comments = []; }
+        }
+        renderComments(comments);
+        return comments;
+    }
+
+    // Guardar comentarios en localStorage
+    function saveComments(comments) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+        renderComments(comments);
+    }
+
+    // Renderizar lista de comentarios en el DOM
+    function renderComments(comments) {
+        const container = document.getElementById("comentariosLista");
+        if (!container) return;
+
+        if (!comments || comments.length === 0) {
+            container.innerHTML = `<p style="color:#94a3b8; font-style:italic; text-align:center;" id="sinComentariosMsg">✨ Aún no hay comentarios. ¡Sé el primero en dejar un mensaje!</p>`;
+            return;
+        }
+
+        // construir HTML de comentarios ordenados del más reciente al más antiguo
+        let html = `<div style="margin-bottom:0.5rem;"><strong>📢 ${comments.length} comentario${comments.length !== 1 ? 's' : ''}</strong></div>`;
+        // Mostrar de más reciente a más antiguo (ya que se agregan al final en array, podemos revertir copia)
+        const reversed = [...comments].reverse();
+        reversed.forEach(com => {
+            const fecha = com.fecha ? new Date(com.fecha).toLocaleString() : "fecha desconocida";
+            html += `
+                <div class="comentario-item">
+                    <div class="comentario-nombre">🧑‍💻 ${escapeHtml(com.nombre)}</div>
+                    <div class="comentario-texto">${escapeHtml(com.mensaje)}</div>
+                    <div class="comentario-fecha">📅 ${fecha}</div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // simple sanitización para evitar XSS
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
         });
     }
-    */
-    
-    // Por ahora se muestran imágenes placeholder estéticas con temática amorosa/cercana. 
-    // Pero tú puedes cambiar las imágenes fácilmente editando los atributos src de cada img dentro del grid.
-    // Alternativa: edita manualmente las fotos: reemplaza los links de picsum por tus fotos.
-    // Añadí la opción para que las imágenes tengan descripciones personalizadas.
-    // EL DISEÑO está completamente adaptado para que cuando pongas sus fotos reales, el collage se vea soñado.
-    
-    // ------- Modal para ampliar fotos ----------
-    const modal = document.getElementById('modalFotos');
-    const modalImg = document.getElementById('modalImagen');
-    const allPhotoItems = document.querySelectorAll('.collage-item');
-    
-    allPhotoItems.forEach(item => {
-        const imgElement = item.querySelector('img');
-        item.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if(imgElement && imgElement.src) {
-                modalImg.src = imgElement.src;
-                modal.style.display = 'flex';
+
+    // añadir nuevo comentario
+    function addComment(nombre, mensaje) {
+        if (!nombre.trim() || !mensaje.trim()) {
+            alert("Por favor, escribe tu nombre y un comentario.");
+            return false;
+        }
+        const comments = loadComments(); // carga actual
+        const newComment = {
+            id: Date.now(),
+            nombre: nombre.trim().substring(0, 50),
+            mensaje: mensaje.trim().substring(0, 500),
+            fecha: new Date().toISOString()
+        };
+        comments.push(newComment);
+        saveComments(comments);
+        return true;
+    }
+
+    // Manejar el envío del formulario
+    const form = document.getElementById("comentarioForm");
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const nombreInput = document.getElementById("nombre");
+            const mensajeInput = document.getElementById("mensaje");
+            if (nombreInput && mensajeInput) {
+                const exito = addComment(nombreInput.value, mensajeInput.value);
+                if (exito) {
+                    form.reset();
+                    // opcional: mostrar notificación rápida
+                    const tempMsg = document.createElement("div");
+                    tempMsg.textContent = "✅ Comentario agregado. ¡Gracias por tu mensaje!";
+                    tempMsg.style.background = "#0f172a";
+                    tempMsg.style.padding = "0.5rem";
+                    tempMsg.style.borderRadius = "2rem";
+                    tempMsg.style.marginTop = "0.8rem";
+                    tempMsg.style.textAlign = "center";
+                    tempMsg.style.fontSize = "0.85rem";
+                    tempMsg.style.border = "1px solid #f97316";
+                    form.appendChild(tempMsg);
+                    setTimeout(() => tempMsg.remove(), 3000);
+                } else {
+                    alert("Completa ambos campos.");
+                }
             }
         });
-    });
-    
-    modal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-    
-    // Botón del corazón flotante: animación y mensaje
-    const btnCorazonFlotante = document.getElementById('corazonFlotante');
-    btnCorazonFlotante.addEventListener('click', () => {
-        // Efecto de explosión de corazones
-        crearLluviaCorazones();
-        // mostrar un pequeño alert personalizado más suave con notificación flotante
-        const noti = document.createElement('div');
-        noti.innerText = '💗 Tú eres mi razón, Brenda. Puedes usar este amor para sanar 💗';
-        noti.style.position = 'fixed';
-        noti.style.bottom = '100px';
-        noti.style.right = '30px';
-        noti.style.background = '#ff77aaee';
-        noti.style.backdropFilter = 'blur(8px)';
-        noti.style.padding = '12px 20px';
-        noti.style.borderRadius = '50px';
-        noti.style.fontWeight = 'bold';
-        noti.style.color = 'white';
-        noti.style.zIndex = '999';
-        noti.style.fontSize = '0.9rem';
-        noti.style.border = '1px solid #ffb7cb';
-        noti.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-        document.body.appendChild(noti);
-        setTimeout(() => {
-            noti.style.opacity = '0';
-            setTimeout(() => noti.remove(), 600);
-        }, 2800);
-    });
-    
-    function crearLluviaCorazones() {
-        for(let i = 0; i < 20; i++) {
-            let heart = document.createElement('div');
-            heart.innerHTML = ['💖','💗','💓','💕','💞','❣️','💘'][Math.floor(Math.random()*7)];
-            heart.style.position = 'fixed';
-            heart.style.bottom = '30px';
-            heart.style.right = '30px';
-            heart.style.fontSize = (Math.random() * 16 + 16) + 'px';
-            heart.style.left = Math.random() * window.innerWidth + 'px';
-            heart.style.bottom = '0px';
-            heart.style.pointerEvents = 'none';
-            heart.style.zIndex = '10000';
-            heart.style.opacity = '0.9';
-            heart.style.animation = 'subirCorazon 1.8s ease-out forwards';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 2000);
-        }
     }
-    // animación keyframe de corazones
-    const styleSheet = document.createElement("style");
-    styleSheet.textContent = `
-        @keyframes subirCorazon {
-            0% { transform: translateY(0) scale(0.4); opacity: 1; }
-            100% { transform: translateY(-400px) scale(1.2); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(styleSheet);
+
+    // Inicializar comentarios al cargar
+    loadComments();
+
+    // --- Personalización de enlaces de redes sociales (para que sean funcionales) ---
+    // Nota: al subir a github.io, puedes modificar estos links para dirigir a tus cuentas reales.
+    // Dejo usuarios de ejemplo pero en producción se pueden reemplazar fácilmente. 
+    // También se puede cambiar desde el inspector, pero es mejor configurar aquí.
+    // Permito que el usuario final desde este script pueda configurar sus enlaces reales.
+    // Como es tu presentación personal, ajustamos los enlaces default para que sean modificables desde el código.
+    // voy a establecer unos marcadores de posición, pero tú Rigoberto los actualizarás con tus URLs reales fácilmente.
+    const githubAnchor = document.getElementById("githubLink");
+    const instagramAnchor = document.getElementById("instagramLink");
+    const facebookAnchor = document.getElementById("facebookLink");
     
-    // Botón promesa dentro del mensaje especial
-    const promesaBtn = document.getElementById('promesaBtn');
-    promesaBtn.addEventListener('click', () => {
-        const mensajeExtra = document.createElement('div');
-        mensajeExtra.innerText = '🌸 "Dispuesto a todo, incluso a que sanes a tu ritmo, Brenda. No hay prisa, solo mi corazón esperándote." 🌸';
-        mensajeExtra.style.position = 'fixed';
-        mensajeExtra.style.bottom = '40%';
-        mensajeExtra.style.left = '50%';
-        mensajeExtra.style.transform = 'translateX(-50%)';
-        mensajeExtra.style.backgroundColor = '#1e1022dd';
-        mensajeExtra.style.backdropFilter = 'blur(12px)';
-        mensajeExtra.style.padding = '1rem 2rem';
-        mensajeExtra.style.borderRadius = '3rem';
-        mensajeExtra.style.border = '2px solid #ffa5c2';
-        mensajeExtra.style.fontSize = '1.1rem';
-        mensajeExtra.style.textAlign = 'center';
-        mensajeExtra.style.zIndex = '1001';
-        mensajeExtra.style.color = '#fff0f5';
-        mensajeExtra.style.fontWeight = '500';
-        mensajeExtra.style.maxWidth = '80%';
-        mensajeExtra.style.boxShadow = '0 10px 25px rgba(0,0,0,0.4)';
-        document.body.appendChild(mensajeExtra);
-        setTimeout(() => {
-            mensajeExtra.style.opacity = '0';
-            setTimeout(() => mensajeExtra.remove(), 500);
-        }, 3500);
-        
-        // También efecto de pétalos suaves
-        for(let i=0;i<12;i++) {
-            let petal = document.createElement('div');
-            petal.innerHTML = '🌸';
-            petal.style.position = 'fixed';
-            petal.style.left = Math.random() * window.innerWidth + 'px';
-            petal.style.top = '-20px';
-            petal.style.fontSize = (Math.random() * 18 + 12) + 'px';
-            petal.style.opacity = '0.7';
-            petal.style.animation = 'caidaPetaleo 3s linear forwards';
-            petal.style.pointerEvents = 'none';
-            document.body.appendChild(petal);
-            setTimeout(() => petal.remove(), 3000);
-        }
-    });
+    // ==========  IMPORTANTE: CAMBIA ESTAS URLS POR TUS PERFILES REALES ==========
+    // Antes de subir a github.io, edita estas constantes con tus enlaces auténticos de GitHub, Instagram y Facebook.
+    const MI_GITHUB_URL = "https://github.com/tu-usuario-rigoberto";    // <--- REEMPLAZA con tu link de GitHub real
+    const MI_INSTAGRAM_URL = "https://instagram.com/tuusuario";        // <--- REEMPLAZA con tu Instagram real
+    const MI_FACEBOOK_URL = "https://facebook.com/tuusuario";          // <--- REEMPLAZA con tu Facebook real
     
-    // keyframes para pétalos
-    const petalStyle = document.createElement('style');
-    petalStyle.textContent = `
-        @keyframes caidaPetaleo {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-            100% { transform: translateY(750px) rotate(360deg); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(petalStyle);
+    if (githubAnchor) githubAnchor.href = MI_GITHUB_URL;
+    if (instagramAnchor) instagramAnchor.href = MI_INSTAGRAM_URL;
+    if (facebookAnchor) facebookAnchor.href = MI_FACEBOOK_URL;
     
-    // efecto de bienvenida: un pequeño mensaje de "creer en el amor"
-    window.addEventListener('load', () => {
-        const toast = document.createElement('div');
-        toast.innerText = '💌 Brenda, gracias por devolverme la esperanza. Por ti todo. 💌';
-        toast.style.position = 'fixed';
-        toast.style.top = '20px';
-        toast.style.left = '50%';
-        toast.style.transform = 'translateX(-50%)';
-        toast.style.backgroundColor = '#a13f64cc';
-        toast.style.backdropFilter = 'blur(14px)';
-        toast.style.padding = '0.7rem 1.5rem';
-        toast.style.borderRadius = '40px';
-        toast.style.fontSize = '0.9rem';
-        toast.style.fontWeight = 'bold';
-        toast.style.color = '#fff0f5';
-        toast.style.border = '1px solid #ffb7cd';
-        toast.style.zIndex = '1000';
-        toast.style.whiteSpace = 'nowrap';
-        document.body.appendChild(toast);
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            setTimeout(() => toast.remove(), 800);
-        }, 4000);
-    });
+    // Adicional, si se quiere abrir en nueva pestaña ya tienen target="_blank", está bien.
     
-    // Nota: Si deseas ajustar el collage con las fotos reales de Brenda solo tienes que editar los "src" de las imágenes dentro .collage-item img.
-    // El diseño continuará siendo hermoso y con todas las animaciones.
+    // También muestro un pequeño mensaje en consola para recordar cambiar links.
+    console.log("🔧 Personaliza tus redes: edita las constantes MI_GITHUB_URL, MI_INSTAGRAM_URL, MI_FACEBOOK_URL en el script.");
+    
+    // Pequeño efecto adicional para los botones de redes, sin embargo ya tienen estilos.
+    // actualización dinámica de "sin comentarios" ya está cubierto en render.
+    
+    // Bonus: Si el usuario hace clic en los badges, no hace nada, solo estilo.
+    // También mostrar una alerta elegante si falta configurar enlaces pero ya tenemos placeholders.
+    if (MI_GITHUB_URL === "https://github.com/tu-usuario-rigoberto") {
+        // Podemos añadir un tooltip sutil sin molestar
+        const githubBtn = document.getElementById("githubLink");
+        if (githubBtn) githubBtn.title = "🔧 Actualiza tu enlace de GitHub en el código (MI_GITHUB_URL)";
+    }
+    if (MI_INSTAGRAM_URL === "https://instagram.com/tuusuario") {
+        const igBtn = document.getElementById("instagramLink");
+        if (igBtn) igBtn.title = "🔧 Reemplaza con tu usuario real de Instagram";
+    }
+    if (MI_FACEBOOK_URL === "https://facebook.com/tuusuario") {
+        const fbBtn = document.getElementById("facebookLink");
+        if (fbBtn) fbBtn.title = "🔧 Coloca tu URL de Facebook personal";
+    }
+    
+    // Pequeño detalle de año dinámico en footer (opcional)
+    const footer = document.querySelector("footer");
+    if (footer) {
+        const año = new Date().getFullYear();
+        footer.innerHTML = footer.innerHTML.replace("2025", año);
+    }
+    
+    // Efecto suave hover a tarjetas ya está en CSS, terminado.
 </script>
 </body>
 </html>
