@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Rigo Jiménez | Entusiasta ciberseguridad · Creador</title>
+    <title>Rigo Jiménez | Iniciando en ciberseguridad · Creador</title>
     <style>
         * {
             margin: 0;
@@ -11,7 +11,6 @@
             box-sizing: border-box;
         }
 
-        /* variables para mejor adaptación */
         :root {
             --glow-cyan: #0ff;
             --bg-dark: #030507;
@@ -35,16 +34,17 @@
             width: 100%;
         }
 
-        /* Tarjeta principal estilo "terminal/cyber" */
+        /* Tarjeta principal */
         .hero {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
             border-radius: 2rem;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 2rem;
             margin-bottom: 2rem;
             border: 1px solid var(--border-neon);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.1);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .hero:hover {
@@ -52,45 +52,72 @@
             box-shadow: 0 0 18px rgba(0, 255, 255, 0.2);
         }
 
-        .nombre {
-            font-size: clamp(2rem, 8vw, 4rem);
+        /* Título principal con formato ✨Hola✨ */
+        .saludo {
+            font-size: clamp(1.8rem, 7vw, 3rem);
+            font-weight: 700;
+            color: #b2f0ff;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(0,255,255,0.4);
+        }
+        
+        .nombre-grande {
+            font-size: clamp(2.5rem, 10vw, 5rem);
             font-weight: 800;
             background: linear-gradient(135deg, #f0f9ff, #9df, #2dd4bf);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
+            margin: 0.5rem 0;
             text-shadow: 0 0 5px rgba(0,200,255,0.3);
             word-break: break-word;
         }
 
+        .bienvenida {
+            font-size: clamp(1rem, 5vw, 1.3rem);
+            font-weight: 500;
+            color: #c2ecff;
+            border-top: 1px dashed rgba(0,255,255,0.3);
+            border-bottom: 1px dashed rgba(0,255,255,0.3);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            margin: 1rem 0;
+            letter-spacing: 1px;
+        }
+
         .tagline-glow {
-            font-size: clamp(0.9rem, 4vw, 1.25rem);
+            font-size: clamp(0.9rem, 4vw, 1.2rem);
             font-weight: 500;
             color: #b2f0ff;
             border-left: 4px solid #0ff;
             padding-left: 1rem;
-            margin: 1rem 0 1.2rem 0;
+            margin: 1.2rem auto 1.2rem auto;
             background: linear-gradient(90deg, #0ff1, transparent);
             display: inline-block;
             border-radius: 0 12px 12px 0;
             letter-spacing: 0.3px;
+            text-align: left;
         }
 
         .descripcion {
-            font-size: clamp(0.9rem, 4vw, 1.1rem);
+            font-size: clamp(0.9rem, 4vw, 1.05rem);
             color: #d2edff;
-            margin: 1.2rem 0 1.8rem 0;
+            margin: 1.5rem 0 1.8rem 0;
             line-height: 1.55;
+            max-width: 85%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* badges estilo herramientas */
+        /* badges */
         .stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.7rem;
             margin: 1.8rem 0 1.5rem;
+            justify-content: center;
         }
 
         .pill {
@@ -112,20 +139,21 @@
             background: #0a1a22aa;
         }
 
-        /* Botones sociales - con colores oficiales y logos mejorados */
+        /* Botones sociales mejorados */
         .redes-block {
             margin: 1.8rem 0 1rem;
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
+            justify-content: center;
         }
 
         .btn-social {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 0.75rem 1.6rem;
+            gap: 12px;
+            padding: 0.75rem 1.8rem;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
@@ -136,12 +164,11 @@
             letter-spacing: 0.3px;
             cursor: pointer;
             flex: 0 1 auto;
-            min-width: 130px;
+            min-width: 140px;
             border: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        /* Estilos para los íconos SVG y imágenes dentro de los botones */
         .btn-social svg, 
         .btn-social img {
             width: 22px;
@@ -150,22 +177,20 @@
             transition: transform 0.2s ease;
         }
 
-        /* Los logos de Instagram y Facebook vienen en color, no los filtramos */
         .btn-instagram img {
             filter: none;
         }
         
-        /* El logo de GitHub sí va en blanco sobre fondo oscuro */
         .btn-github svg {
             fill: white;
         }
 
         .btn-social:hover svg,
         .btn-social:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
-        /* Colores oficiales de cada red */
+        /* Colores oficiales */
         .btn-github {
             background: #24292e;
             border: 1px solid #3a3f44;
@@ -179,7 +204,6 @@
         .btn-instagram {
             background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D, #FCAF45, #FFDC80);
             background-size: 140% 140%;
-            border: none;
         }
         .btn-instagram:hover {
             transform: translateY(-3px);
@@ -189,7 +213,6 @@
 
         .btn-facebook {
             background: #1877f2;
-            border: none;
         }
         .btn-facebook:hover {
             background: #166fe5;
@@ -296,7 +319,6 @@
             text-decoration: none;
         }
 
-        /* Ajustes táctiles para móviles */
         @media (max-width: 640px) {
             body {
                 padding: 0.75rem;
@@ -306,32 +328,10 @@
             }
             .btn-social {
                 padding: 0.6rem 1.2rem;
-                min-width: 110px;
+                min-width: 120px;
             }
-            .pill {
-                white-space: normal;
-                word-break: keep-all;
-            }
-            .stack {
-                gap: 0.6rem;
-            }
-            .card-interes {
-                padding: 1rem;
-            }
-        }
-
-        /* iPhone SE y pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .redes-block {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn-social {
-                width: 100%;
-                justify-content: center;
-            }
-            .nombre {
-                text-align: center;
+            .descripcion {
+                max-width: 100%;
             }
             .tagline-glow {
                 text-align: center;
@@ -344,35 +344,38 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .descripcion {
-                text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .redes-block {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-social {
+                width: 100%;
+                justify-content: center;
             }
             .stack {
                 justify-content: center;
             }
-        }
-
-        /* Para evitar que los textos se corten en landscape */
-        @media (max-width: 850px) and (orientation: landscape) {
-            .grid-intereses {
-                gap: 0.8rem;
-            }
-            .card-interes {
-                flex: 1 1 220px;
+            .pill {
+                white-space: normal;
             }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- Presentación principal -->
+    <!-- Presentación principal con ✨Hola✨ -->
     <div class="hero">
-        <h1 class="nombre">✨ Rigo Jiménez ✨</h1>
-        <div class="tagline-glow">⚡ Entusiasta de ciberseguridad · Creador de herramientas · Aprendiz perpetuo ⚡</div>
+        <div class="saludo">✨ Hola ✨</div>
+        <div class="nombre-grande">Rigo Jiménez</div>
+        <div class="bienvenida">Bienvenido!!</div>
+        <div class="tagline-glow">⚡ estoy comenzando · ciberseguridad · creador ⚡</div>
         <div class="descripcion">
             Pequeño gran entusiasta que se dedica a aprender ciberseguridad, desarrollar scripts útiles y compartir conocimiento. 
-            Me apasiona romper y construir, entender sistemas y crear mis propias herramientas en tiempos libres. 
-            Si tienes dudas, comentarios o sugerencias, siempre estoy disponible en mis redes sociales. 🛡️
+            Voy construyendo mis habilidades paso a paso, con código, errores y mucha curiosidad. 
+            Si tienes dudas, comentarios o sugerencias, aquí estoy en mis redes. 🛡️
         </div>
         <div class="stack">
             <span class="pill">🐚 Bash · Python</span>
@@ -382,19 +385,19 @@
             <span class="pill">🔧 Herramientas caseras</span>
         </div>
         <div class="redes-block">
-            <!-- GitHub con logo oficial (blanco) -->
+            <!-- GitHub con logo oficial -->
             <a href="https://github.com/r1gox" target="_blank" class="btn-social btn-github" id="githubBtnMain">
                 <svg viewBox="0 0 16 16" width="22" height="22" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
                 GitHub
             </a>
-            <!-- Instagram con logo oficial de la URL que proporcionaste (color original) -->
+            <!-- Instagram con logo oficial -->
             <a href="https://www.instagram.com/rigo.jz" target="_blank" class="btn-social btn-instagram" id="instagramBtn">
                 <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" width="22" height="22">
                 Instagram
             </a>
-            <!-- Facebook con logo oficial (color azul original) usando ícono desde Font Awesome CDN alternativo -->
+            <!-- Facebook con logo oficial -->
             <a href="https://www.facebook.com/profile.php?id=61550483876584" target="_blank" class="btn-social btn-facebook" id="facebookBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="white">
                     <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.96h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/>
@@ -402,12 +405,12 @@
                 Facebook
             </a>
         </div>
-        <div style="font-size: clamp(0.65rem, 3vw, 0.75rem); margin-top: 1rem; opacity: 0.7; font-family: monospace; text-align: center;">
+        <div style="font-size: clamp(0.65rem, 3vw, 0.75rem); margin-top: 1rem; opacity: 0.7; font-family: monospace;">
             <span>❯❯ “aprender, romper, construir y proteger” ❮❮</span>
         </div>
     </div>
 
-    <!-- Sección de gustos: programación + series y películas -->
+    <!-- Sección de gustos -->
     <div class="grid-intereses">
         <div class="card-interes">
             <div class="card-titulo">
@@ -444,13 +447,12 @@
         </div>
     </div>
 
-    <!-- Bloque especial: "jugar a ser ingeniero" (filosofía, sin carrera) -->
+    <!-- Bloque "jugar a ser ingeniero" -->
     <div class="futuro-block">
         <p class="futuro-texto">🚀 « Alguien que intenta jugar a ser ingeniero → futuro ingeniero »</p>
         <p style="margin-top: 10px; font-size: clamp(0.8rem, 3.8vw, 0.9rem); color: #bbd9ff;">Construyendo habilidades, compartiendo código y forjando mi camino en el mundo tech. Cada error es un paso, cada proyecto un ladrillo.</p>
     </div>
 
-    <!-- Pequeña cita de recursos -->
     <div style="margin: 1rem 0 0.5rem; text-align: center; font-family: monospace;">
         <span class="mini-badge">🔧 Herramientas que voy creando en mi GitHub · código abierto y aprendizaje constante</span>
     </div>
@@ -462,16 +464,11 @@
 </div>
 
 <script>
-    // ===== CONFIGURACIÓN DE ENLACES SOCIALES (ACTUALIZADO CON TUS PERFILES REALES) =====
-    // GitHub: tu usuario correcto
-    // Instagram: rigo.jz (según el link que compartiste)
-    // Facebook: ID 61550483876584 (perfil Rigo Jiménez)
-    
+    // Enlaces ya configurados con tus perfiles reales
     const GITHUB_URL = "https://github.com/r1gox";
     const INSTAGRAM_URL = "https://www.instagram.com/rigo.jz";
     const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61550483876584";
     
-    // Asignar los enlaces a los botones
     const githubBtn = document.getElementById("githubBtnMain");
     const instaBtn = document.getElementById("instagramBtn");
     const fbBtn = document.getElementById("facebookBtn");
@@ -480,10 +477,10 @@
     if (instaBtn) instaBtn.href = INSTAGRAM_URL;
     if (fbBtn) fbBtn.href = FACEBOOK_URL;
     
-    // Mejora táctil para móviles: feedback visual al tocar
+    // Feedback táctil para móviles
     const allBtns = document.querySelectorAll('.btn-social');
     allBtns.forEach(btn => {
-        btn.addEventListener('touchstart', function(e) {
+        btn.addEventListener('touchstart', function() {
             this.style.transform = 'scale(0.96)';
         }, { passive: true });
         btn.addEventListener('touchend', function() {
@@ -494,18 +491,13 @@
         });
     });
     
-    // Mensaje en consola recordatorio de que los enlaces ya están configurados
-    console.log("✅ Portafolio listo con tus perfiles reales: GitHub, Instagram (@rigo.jz) y Facebook (Rigo Jiménez)");
-    
-    // Ajuste para móviles: deshabilitar hover que pueda quedarse pegado
     if ('ontouchstart' in window) {
         const style = document.createElement('style');
         style.textContent = `.btn-social:hover { transform: none; } .btn-social:active { transform: scale(0.96); }`;
         document.head.appendChild(style);
     }
     
-    // Efecto consola
-    console.log("%c🐙 r1gox | Ciberseguridad · Herramientas · Código", "color: #0ff; font-size: 12px; font-family: monospace;");
+    console.log("%c✨ Rigo Jiménez | Estoy comenzando · Ciberseguridad · GitHub: r1gox", "color: #0ff; font-size: 13px; font-family: monospace;");
 </script>
 </body>
 </html>
