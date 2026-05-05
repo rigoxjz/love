@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Rigo Jiménez | Entusiasta ciberseguridad & creador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Rigo Jiménez | Entusiasta ciberseguridad · Creador</title>
     <style>
         * {
             margin: 0;
@@ -11,39 +11,49 @@
             box-sizing: border-box;
         }
 
+        /* variables para mejor adaptación */
+        :root {
+            --glow-cyan: #0ff;
+            --bg-dark: #030507;
+            --card-bg: rgba(8, 16, 24, 0.7);
+            --text-primary: #eef4ff;
+            --border-neon: rgba(0, 255, 255, 0.4);
+        }
+
         body {
             background: radial-gradient(circle at 20% 30%, #0a0c10, #010101);
-            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, monospace;
-            color: #eef4ff;
+            font-family: 'Segoe UI', 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            color: var(--text-primary);
             line-height: 1.5;
-            padding: 2rem 1.5rem;
+            padding: 1rem;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         /* Tarjeta principal estilo "terminal/cyber" */
         .hero {
-            background: rgba(8, 16, 24, 0.65);
+            background: var(--card-bg);
             backdrop-filter: blur(16px);
-            border-radius: 3rem;
-            padding: 3rem 2.5rem;
-            margin-bottom: 2.5rem;
-            border: 1px solid rgba(0, 255, 255, 0.35);
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 255, 255, 0.1);
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-neon);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         .hero:hover {
-            border-color: #0ff6;
+            border-color: #0ff8;
             box-shadow: 0 0 18px rgba(0, 255, 255, 0.2);
         }
 
         .nombre {
-            font-size: 3.8rem;
+            font-size: clamp(2rem, 8vw, 4rem);
             font-weight: 800;
             background: linear-gradient(135deg, #f0f9ff, #9df, #2dd4bf);
             background-clip: text;
@@ -52,10 +62,11 @@
             letter-spacing: -0.02em;
             margin-bottom: 0.5rem;
             text-shadow: 0 0 5px rgba(0,200,255,0.3);
+            word-break: break-word;
         }
 
         .tagline-glow {
-            font-size: 1.25rem;
+            font-size: clamp(0.9rem, 4vw, 1.25rem);
             font-weight: 500;
             color: #b2f0ff;
             border-left: 4px solid #0ff;
@@ -68,31 +79,31 @@
         }
 
         .descripcion {
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 4vw, 1.1rem);
             color: #d2edff;
-            max-width: 90%;
-            margin: 1.5rem 0 2rem 0;
+            margin: 1.2rem 0 1.8rem 0;
             line-height: 1.55;
         }
 
-        /* badges estilo herramientas / intereses */
+        /* badges estilo herramientas */
         .stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 2rem 0 1.5rem;
+            gap: 0.7rem;
+            margin: 1.8rem 0 1.5rem;
         }
 
         .pill {
             background: #0a111ccc;
-            padding: 0.45rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: clamp(0.7rem, 3.5vw, 0.85rem);
             font-weight: 500;
             backdrop-filter: blur(5px);
             border: 1px solid #2c6e9e;
             color: #c2ecff;
             font-family: monospace;
+            white-space: nowrap;
         }
 
         .pill-cyber {
@@ -101,122 +112,143 @@
             background: #0a1a22aa;
         }
 
-        /* Redes sociales - estilo botones con hover brillante */
+        /* Botones sociales - táctiles y responsivos */
         .redes-block {
-            margin: 2rem 0 1rem;
+            margin: 1.8rem 0 1rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 1.2rem;
+            gap: 0.9rem;
         }
 
         .btn-social {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(0, 20, 30, 0.7);
-            padding: 0.75rem 1.8rem;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(0, 20, 30, 0.75);
+            padding: 0.7rem 1.4rem;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.25s;
             border: 1px solid rgba(0, 255, 255, 0.5);
             color: white;
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 4vw, 1rem);
             backdrop-filter: blur(8px);
             font-family: monospace;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            flex: 0 1 auto;
+            min-width: 120px;
         }
 
         .btn-social i {
             font-style: normal;
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
-        .btn-social:hover {
-            transform: translateY(-3px);
-            background: #0ff2;
-            border-color: #0ff;
-            box-shadow: 0 0 14px #0ff6;
-            color: #fff;
+        .btn-social:active {
+            transform: scale(0.97);
         }
 
-        /* Tarjetas de intereses personales: programación + series/pelis */
+        @media (hover: hover) {
+            .btn-social:hover {
+                transform: translateY(-3px);
+                background: #0ff2;
+                border-color: #0ff;
+                box-shadow: 0 0 14px #0ff6;
+            }
+        }
+
+        /* Tarjetas de intereses */
         .grid-intereses {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.8rem;
+            gap: 1.2rem;
             margin: 1.8rem 0 2rem;
         }
 
         .card-interes {
             background: #0e1622aa;
             backdrop-filter: blur(12px);
-            border-radius: 2rem;
-            padding: 1.6rem;
-            flex: 1 1 250px;
+            border-radius: 1.8rem;
+            padding: 1.3rem;
+            flex: 1 1 260px;
             border: 1px solid #2a4a6e;
             transition: all 0.2s;
         }
 
-        .card-interes:hover {
-            border-color: #0ff7;
-            transform: translateY(-5px);
-            background: #0f1c2ccc;
+        @media (hover: hover) {
+            .card-interes:hover {
+                border-color: #0ff7;
+                transform: translateY(-5px);
+                background: #0f1c2ccc;
+            }
         }
 
         .card-titulo {
-            font-size: 1.7rem;
+            font-size: clamp(1.3rem, 5vw, 1.7rem);
             font-weight: 700;
             margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-family: monospace;
             color: #8dd0ff;
         }
 
         .lista-intereses {
             list-style: none;
-            margin-top: 0.8rem;
+            margin-top: 0.5rem;
         }
 
         .lista-intereses li {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.7rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 3.8vw, 0.95rem);
             color: #cbe5fe;
+            flex-wrap: wrap;
         }
 
-        /* Frase "jugar a ser ingeniero" destacada */
+        /* bloque futuro */
         .futuro-block {
             background: #030b18a0;
-            border-radius: 2rem;
-            padding: 1.5rem;
+            border-radius: 1.8rem;
+            padding: 1.3rem;
             text-align: center;
-            margin: 2rem 0 1rem;
+            margin: 1.5rem 0 1rem;
             backdrop-filter: blur(10px);
             border: 1px dashed #3b82f6;
         }
 
         .futuro-texto {
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-size: clamp(1rem, 4.5vw, 1.2rem);
+            font-weight: 600;
             background: linear-gradient(120deg, #b9f3ff, #80e0ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+            word-break: break-word;
+        }
+
+        .mini-badge {
+            background: #0a111c60;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: clamp(0.7rem, 3vw, 0.8rem);
         }
 
         footer {
             text-align: center;
-            margin-top: 3rem;
-            font-size: 0.8rem;
+            margin-top: 2.5rem;
+            font-size: clamp(0.7rem, 3vw, 0.8rem);
             color: #6c8fb0;
             border-top: 1px solid #1f3550;
-            padding-top: 1.8rem;
+            padding-top: 1.5rem;
         }
 
         .footer-link {
@@ -224,19 +256,68 @@
             text-decoration: none;
         }
 
-        @media (max-width: 700px) {
-            .nombre {
-                font-size: 2.4rem;
-            }
-            .descripcion {
-                max-width: 100%;
+        /* Ajustes táctiles para móviles */
+        @media (max-width: 640px) {
+            body {
+                padding: 0.75rem;
             }
             .hero {
-                padding: 1.8rem;
+                padding: 1.5rem;
             }
             .btn-social {
-                padding: 0.55rem 1.2rem;
-                font-size: 0.85rem;
+                padding: 0.6rem 1.2rem;
+                min-width: 100px;
+            }
+            .pill {
+                white-space: normal;
+                word-break: keep-all;
+            }
+            .stack {
+                gap: 0.6rem;
+            }
+            .card-interes {
+                padding: 1rem;
+            }
+        }
+
+        /* iPhone SE y pantallas muy pequeñas */
+        @media (max-width: 380px) {
+            .redes-block {
+                justify-content: center;
+            }
+            .btn-social {
+                width: 100%;
+                justify-content: center;
+            }
+            .nombre {
+                text-align: center;
+            }
+            .tagline-glow {
+                text-align: center;
+                border-left: none;
+                border-bottom: 2px solid #0ff;
+                padding-left: 0;
+                padding-bottom: 0.3rem;
+                display: block;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .descripcion {
+                text-align: center;
+            }
+            .stack {
+                justify-content: center;
+            }
+        }
+
+        /* Para evitar que los textos se corten en landscape */
+        @media (max-width: 850px) and (orientation: landscape) {
+            .grid-intereses {
+                gap: 0.8rem;
+            }
+            .card-interes {
+                flex: 1 1 220px;
             }
         }
     </style>
@@ -270,12 +351,12 @@
                 <i>📘</i> Facebook
             </a>
         </div>
-        <div style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.7; font-family: monospace;">
+        <div style="font-size: clamp(0.65rem, 3vw, 0.75rem); margin-top: 1rem; opacity: 0.7; font-family: monospace; text-align: center;">
             <span>❯❯ “aprender, romper, construir y proteger” ❮❮</span>
         </div>
     </div>
 
-    <!-- Sección de gustos: programación + series y películas (sin mencionar carrera) -->
+    <!-- Sección de gustos: programación + series y películas (responsive) -->
     <div class="grid-intereses">
         <div class="card-interes">
             <div class="card-titulo">
@@ -312,31 +393,31 @@
         </div>
     </div>
 
-    <!-- Bloque especial: "jugar a ser ingeniero" (solo filosofía, sin carrera específica) -->
+    <!-- Bloque especial: "jugar a ser ingeniero" (filosofía, sin carrera) -->
     <div class="futuro-block">
         <p class="futuro-texto">🚀 « Alguien que intenta jugar a ser ingeniero → futuro ingeniero »</p>
-        <p style="margin-top: 12px; font-size: 0.9rem; color: #bbd9ff;">Construyendo habilidades, compartiendo código y forjando mi camino en el mundo tech. Cada error es un paso, cada proyecto un ladrillo.</p>
+        <p style="margin-top: 10px; font-size: clamp(0.8rem, 3.8vw, 0.9rem); color: #bbd9ff;">Construyendo habilidades, compartiendo código y forjando mi camino en el mundo tech. Cada error es un paso, cada proyecto un ladrillo.</p>
     </div>
 
-    <!-- Pequeña cita de recursos -->
+    <!-- Pequeña cita de recursos - adaptable -->
     <div style="margin: 1rem 0 0.5rem; text-align: center; font-family: monospace;">
-        <span style="background: #0a111c60; padding: 0.3rem 1rem; border-radius: 30px;">🔧 Herramientas que voy creando en mi GitHub · código abierto y aprendizaje constante</span>
+        <span class="mini-badge">🔧 Herramientas que voy creando en mi GitHub · código abierto y aprendizaje constante</span>
     </div>
 
     <footer>
         <span>r1gox · ciberseguridad & creación · 2026</span><br>
-        <span style="font-size:0.7rem;">🌐 hosteado en GitHub Pages — <a href="https://github.com/r1gox" target="_blank" class="footer-link">github.com/r1gox</a> | siempre en beta 🚀</span>
+        <span style="font-size: clamp(0.6rem, 2.8vw, 0.7rem);">🌐 hosteado en GitHub Pages — <a href="https://github.com/r1gox" target="_blank" class="footer-link">github.com/r1gox</a> | siempre en beta 🚀</span>
     </footer>
 </div>
 
 <script>
     // ===== CONFIGURACIÓN DE ENLACES SOCIALES (REEMPLAZAR CON TUS URLs REALES) =====
     // GitHub ya está correcto: apunta a tu perfil https://github.com/r1gox
-    // Solo necesitas cambiar INSTAGRAM y FACEBOOK por tus perfiles verdaderos.
+    // Cambia las siguientes variables con tus cuentas reales de Instagram y Facebook.
     
     const GITHUB_URL = "https://github.com/r1gox";
-    const INSTAGRAM_URL = "https://instagram.com/tuusuario";   // <--- CAMBIA por tu instagram real (ej: https://instagram.com/rigo_h4ck)
-    const FACEBOOK_URL = "https://facebook.com/tuusuario";     // <--- CAMBIA por tu facebook real
+    const INSTAGRAM_URL = "https://instagram.com/tuusuario";   // <--- Ejemplo: "https://instagram.com/rigo_h4ck"
+    const FACEBOOK_URL = "https://facebook.com/tuusuario";     // <--- Ejemplo: "https://facebook.com/rigo.jimenez"
     
     // Asignar los enlaces a los botones
     const githubBtn = document.getElementById("githubBtnMain");
@@ -348,6 +429,7 @@
         instaBtn.href = INSTAGRAM_URL;
         if (INSTAGRAM_URL === "https://instagram.com/tuusuario") {
             instaBtn.title = "🔧 Reemplaza con tu usuario real de Instagram (edita INSTAGRAM_URL)";
+            if (window.innerWidth > 700) instaBtn.setAttribute('data-tip', 'Actualiza URL');
         }
     }
     if (fbBtn) {
@@ -357,8 +439,30 @@
         }
     }
     
+    // Mejora táctil: prevenir delay en clics para móviles (no necesario, pero da fluidez)
+    const allBtns = document.querySelectorAll('.btn-social');
+    allBtns.forEach(btn => {
+        btn.addEventListener('touchstart', function(e) {
+            // solo para mejorar feedback, no interferimos con el click nativo
+            this.style.transform = 'scale(0.97)';
+        }, { passive: true });
+        btn.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+        btn.addEventListener('touchcancel', function() {
+            this.style.transform = '';
+        });
+    });
+    
     // Mensaje en consola amigable recordatorio
-    console.log("✅ Portafolio listo. GitHub apunta a r1gox correctamente. Recuerda actualizar INSTAGRAM_URL y FACEBOOK_URL con tus redes reales.");
+    console.log("✅ Portafolio responsive listo. GitHub apunta a r1gox correctamente. Recuerda actualizar INSTAGRAM_URL y FACEBOOK_URL con tus redes reales.");
+    
+    // Ajuste pequeño para evitar que los botones se queden escalados en móvil después del hover (touch)
+    if ('ontouchstart' in window) {
+        const style = document.createElement('style');
+        style.textContent = `.btn-social:hover { transform: none; } .btn-social:active { transform: scale(0.97); }`;
+        document.head.appendChild(style);
+    }
 </script>
 </body>
 </html>
