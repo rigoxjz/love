@@ -1,3 +1,5 @@
+Aquí tienes la versión mejorada con los colores originales de cada red social en los botones, manteniendo el diseño cyberpunk y la adaptación perfecta para PC, Android e iPhone.
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -112,12 +114,12 @@
             background: #0a1a22aa;
         }
 
-        /* Botones sociales - táctiles y responsivos */
+        /* Botones sociales - con colores oficiales */
         .redes-block {
             margin: 1.8rem 0 1rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.9rem;
+            gap: 1rem;
         }
 
         .btn-social {
@@ -125,40 +127,62 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: rgba(0, 20, 30, 0.75);
-            padding: 0.7rem 1.4rem;
+            padding: 0.75rem 1.6rem;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.25s;
-            border: 1px solid rgba(0, 255, 255, 0.5);
+            transition: all 0.25s ease;
             color: white;
             font-size: clamp(0.85rem, 4vw, 1rem);
-            backdrop-filter: blur(8px);
             font-family: monospace;
             letter-spacing: 0.3px;
             cursor: pointer;
             flex: 0 1 auto;
-            min-width: 120px;
+            min-width: 130px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .btn-social i {
             font-style: normal;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+        }
+
+        /* Colores oficiales de cada red */
+        .btn-github {
+            background: #24292e;
+            border: 1px solid #3a3f44;
+        }
+        .btn-github:hover {
+            background: #2c3136;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D, #FCAF45, #FFDC80);
+            background-size: 140% 140%;
+            border: none;
+        }
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            background-size: 160% 160%;
+            box-shadow: 0 8px 20px rgba(225,48,108,0.4);
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            border: none;
+        }
+        .btn-facebook:hover {
+            background: #166fe5;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(24,119,242,0.4);
         }
 
         .btn-social:active {
             transform: scale(0.97);
-        }
-
-        @media (hover: hover) {
-            .btn-social:hover {
-                transform: translateY(-3px);
-                background: #0ff2;
-                border-color: #0ff;
-                box-shadow: 0 0 14px #0ff6;
-            }
         }
 
         /* Tarjetas de intereses */
@@ -266,7 +290,7 @@
             }
             .btn-social {
                 padding: 0.6rem 1.2rem;
-                min-width: 100px;
+                min-width: 110px;
             }
             .pill {
                 white-space: normal;
@@ -281,9 +305,10 @@
         }
 
         /* iPhone SE y pantallas muy pequeñas */
-        @media (max-width: 380px) {
+        @media (max-width: 480px) {
             .redes-block {
-                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
             }
             .btn-social {
                 width: 100%;
@@ -320,6 +345,12 @@
                 flex: 1 1 220px;
             }
         }
+
+        /* Efecto de brillo adicional para los botones */
+        @keyframes subtlePulse {
+            0% { box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+            100% { box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        }
     </style>
 </head>
 <body>
@@ -341,13 +372,13 @@
             <span class="pill">🔧 Herramientas caseras</span>
         </div>
         <div class="redes-block">
-            <a href="https://github.com/r1gox" target="_blank" class="btn-social" id="githubBtnMain">
+            <a href="https://github.com/r1gox" target="_blank" class="btn-social btn-github" id="githubBtnMain">
                 <i>🌐</i> GitHub
             </a>
-            <a href="https://instagram.com/tuusuario" target="_blank" class="btn-social" id="instagramBtn">
+            <a href="https://instagram.com/tuusuario" target="_blank" class="btn-social btn-instagram" id="instagramBtn">
                 <i>🅾</i> Instagram
             </a>
-            <a href="https://facebook.com/tuusuario" target="_blank" class="btn-social" id="facebookBtn">
+            <a href="https://facebook.com/tuusuario" target="_blank" class="btn-social btn-facebook" id="facebookBtn">
                 <i>ⓕ</i> Facebook
             </a>
         </div>
@@ -411,13 +442,13 @@
 </div>
 
 <script>
-    // ===== CONFIGURACIÓN DE ENLACES SOCIALES (REEMPLAZAR CON TUS URLs REALES) =====
-    // GitHub ya está correcto: apunta a tu perfil https://github.com/r1gox
-    // Cambia las siguientes variables con tus cuentas reales de Instagram y Facebook.
+    // ===== CONFIGURACIÓN DE ENLACES SOCIALES =====
+    // GitHub ya apunta a tu perfil real: https://github.com/r1gox
+    // ¡CAMBIAR LAS SIGUIENTES URLS CON TUS REDES REALES!
     
     const GITHUB_URL = "https://github.com/r1gox";
-    const INSTAGRAM_URL = "https://instagram.com/tuusuario";   // <--- Ejemplo: "https://instagram.com/rigo_h4ck"
-    const FACEBOOK_URL = "https://facebook.com/tuusuario";     // <--- Ejemplo: "https://facebook.com/rigo.jimenez"
+    const INSTAGRAM_URL = "https://instagram.com/tuusuario";   // <--- Ejemplo: "https://instagram.com/rigo_jimenez"
+    const FACEBOOK_URL = "https://facebook.com/tuusuario";     // <--- Ejemplo: "https://facebook.com/rigo.gomez"
     
     // Asignar los enlaces a los botones
     const githubBtn = document.getElementById("githubBtnMain");
@@ -428,23 +459,21 @@
     if (instaBtn) {
         instaBtn.href = INSTAGRAM_URL;
         if (INSTAGRAM_URL === "https://instagram.com/tuusuario") {
-            instaBtn.title = "🔧 Reemplaza con tu usuario real de Instagram (edita INSTAGRAM_URL)";
-            if (window.innerWidth > 700) instaBtn.setAttribute('data-tip', 'Actualiza URL');
+            instaBtn.title = "🔧 Edita INSTAGRAM_URL con tu usuario real";
         }
     }
     if (fbBtn) {
         fbBtn.href = FACEBOOK_URL;
         if (FACEBOOK_URL === "https://facebook.com/tuusuario") {
-            fbBtn.title = "🔧 Configura tu enlace de Facebook personal";
+            fbBtn.title = "🔧 Edita FACEBOOK_URL con tu perfil real";
         }
     }
     
-    // Mejora táctil: prevenir delay en clics para móviles (no necesario, pero da fluidez)
+    // Mejora táctil para móviles: feedback visual al tocar
     const allBtns = document.querySelectorAll('.btn-social');
     allBtns.forEach(btn => {
         btn.addEventListener('touchstart', function(e) {
-            // solo para mejorar feedback, no interferimos con el click nativo
-            this.style.transform = 'scale(0.97)';
+            this.style.transform = 'scale(0.96)';
         }, { passive: true });
         btn.addEventListener('touchend', function() {
             this.style.transform = '';
@@ -454,15 +483,19 @@
         });
     });
     
-    // Mensaje en consola amigable recordatorio
-    console.log("✅ Portafolio responsive listo. GitHub apunta a r1gox correctamente. Recuerda actualizar INSTAGRAM_URL y FACEBOOK_URL con tus redes reales.");
+    // Mensaje en consola recordatorio
+    console.log("✅ Portafolio listo con colores oficiales. GitHub: r1gox correcto. Recuerda actualizar INSTAGRAM_URL y FACEBOOK_URL");
     
-    // Ajuste pequeño para evitar que los botones se queden escalados en móvil después del hover (touch)
+    // Ajuste para móviles: deshabilitar hover que pueda quedarse pegado en dispositivos táctiles
     if ('ontouchstart' in window) {
         const style = document.createElement('style');
-        style.textContent = `.btn-social:hover { transform: none; } .btn-social:active { transform: scale(0.97); }`;
+        style.textContent = `.btn-social:hover { transform: none; } .btn-social:active { transform: scale(0.96); }`;
         document.head.appendChild(style);
     }
+    
+    // Mini efecto de consola al cargar (solo estético)
+    console.log("%c🐙 r1gox | Ciberseguridad · Herramientas · Código", "color: #0ff; font-size: 12px; font-family: monospace;");
 </script>
 </body>
 </html>
+```
